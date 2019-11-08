@@ -13,6 +13,9 @@
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-3 mb-30">
           <div class="box-hover-effect effect2 bg-lightest-gray wow fadeInUp maxwidth400 p-10" data-wow-duration="1.5s" data-wow-offset="10" style="box-shadow: 0 5px 35px -16px #888888; height: 340px;">
+          	<div class="" style="position: absolute; z-index: 99999; background-color: rgba(173, 6, 6, 0.6); width: 92%; text-align: center; color: #fff;">
+        		<h6 align="center" style="color: #fff;"><b> Reward </b></h6>
+        	</div>
             <div class="thumb"> <img class="img-responsive img-fullwidth" src="<?php echo base_url()?>assets/images/emw4.jpg" alt="featured project"  style="min-width: auto; min-height: auto; max-height: 320px!important; max-width: 95%;">
               <div class="overlay black">
                 <div class="display-table">
@@ -33,6 +36,7 @@
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 mb-30">
           <div class="box-hover-effect effect2 bg-lightest-gray wow fadeInUp maxwidth400 p-10" data-wow-duration="1.5s" data-wow-offset="10" style="box-shadow: 0 5px 35px -16px #888888; height: 340px;">
+
             <div class="thumb"> <img class="img-responsive img-fullwidth" src="<?php echo base_url()?>assets/images/emw.jpg" alt="featured project"  style="min-width: auto; min-height: auto; max-height: 320px!important; max-width: 95%;">
               <div class="overlay black">
                 <div class="display-table">
@@ -93,6 +97,7 @@
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 mb-30">
           <div class="box-hover-effect effect2 bg-lightest-gray wow fadeInUp maxwidth400 p-10" data-wow-duration="1.5s" data-wow-offset="10" style="box-shadow: 0 5px 35px -16px #888888; height: 340px;">
+        	
             <div class="thumb"> <img class="img-responsive img-fullwidth" src="<?php echo base_url()?>assets/images/emw3.jpg" alt="featured project"  style="min-width: auto; min-height: auto; max-height: 320px!important; max-width: 95%;">
               <div class="overlay black">
                 <div class="display-table">
@@ -113,7 +118,11 @@
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 mb-30">
           <div class="box-hover-effect effect2 bg-lightest-gray wow fadeInUp maxwidth400 p-10" data-wow-duration="1.5s" data-wow-offset="10" style="box-shadow: 0 5px 35px -16px #888888; height: 340px;">
-            <div class="thumb"> <img class="img-responsive img-fullwidth" src="<?php echo base_url()?>assets/images/emw2.png" alt="featured project"  style="min-width: auto; min-height: auto; max-height: 320px!important; max-width: 95%;">
+        	<div class="" style="position: absolute; z-index: 99999; background-color: rgba(173, 6, 6, 0.6); width: 92%; text-align: center; color: #fff;">
+        		<h6 align="center" style="color: #fff;"><b> Reward </b></h6>
+        	</div>
+            <div class="thumb">
+        	<img class="img-responsive img-fullwidth" src="<?php echo base_url()?>assets/images/emw2.png" alt="featured project"  style="min-width: auto; min-height: auto; max-height: 320px!important; max-width: 95%;">
               <div class="overlay black">
                 <div class="display-table">
                   <div class="display-table-cell">

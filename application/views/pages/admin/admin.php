@@ -70,15 +70,14 @@
 		      <div class="col-md-9">
 		        <div class="widget no-border m-0">
 		          <ul class="list-inline pull-right sm-pull-none sm-text-center mt-5">
-		            <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-colored"></i> <a class="text-gray" href="#">6583</a> </li>
-		            <li class="m-0 pl-10 pr-10"> <i class="fa fa-clock-o text-theme-colored"></i> 24/7 </li>
-		            	
+	            	<li class="m-0 pl-10 pr-10">  <a href="#"><img class="image" src="<?php echo base_url()?>assets/images/emw4.jpg" alt="featured project"  style="min-width: auto; min-height: auto; max-height: 30px!important; max-width: 30px; border-radius: 50%; margin-top: -5%;"></a></li>
+		            </li>
 		            <?php
 		          		if( current_url()==base_url('/') )
 		          		{
 		          			echo "<a href='#' id='side-panel-trigger' class='side-panel-trigger'><i class='fa fa-bars fa-lg text-gray'></i></a>";
 		          		}else{
-		          			echo "<li><a href=".base_url()."><i class='fa fa-sign-out fa-lg'></i></a></li>";
+		          			echo "<li><a href=".base_url()."><i class='fa fa-sign-out'></i> Logout</a></li>";
 		          		}
 		          	?>
 		          </ul>
@@ -102,7 +101,8 @@
 			        <a href="#" class="list-group-item" data-toggle="modal" data-target="#add-client"><span class="fa fa-list"></span> All Wanted List</a>
 			        <a href="#" class="list-group-item" data-toggle="modal" data-target="#cargo-status"><span class="fa fa-edit"></span> All Reports</a>
 			        <a href="/admin-all-client" class="list-group-item"><span class="fa fa-pencil"></span> New Crime Report<span class="badge main-color-bg">10</span></a>
-			        <a href="/admin-all-support" class="list-group-item"><span class="fa fa-life-ring"></span> <span class="badge main-color-bg">10</span></a>
+			        <a href="/admin-all-support" class="list-group-item"><span class="fa fa-life-ring"></span> Support Request<span class="badge main-color-bg">10</span></a>
+			        <a href="/home" class="list-group-item"><span class="fa fa-cog"></span> Setting</a>
 			      </div>
 			    </div>
 			  </div>
@@ -137,6 +137,77 @@
 	                                <div class="panel-heading main-color-bg">
 	                                    <h3 class="panel-title" align="center">Fugitives Reports</h3>
 	                                </div>
+	                                <section class="text-center" style="margin-top: -8%;">
+										<div class="container">
+											<div class="section-content">
+											  	<div class="row multi-row-clearfix">
+												    <div class="col-sm-6 col-md-3 mb-sm-90 mb-md-30">
+												      <div class="icon-box iconbox-theme-colored bg-lighter">
+												        <h5 class="icon-box-title">Abebe Kebede</h5>
+												        <a class="icon icon-dark icon-bordered icon-rounded icon-border-effect effect-rounded" href="#">
+												          <img class="img-responsive img-fullwidth" src="<?php echo base_url()?>assets/images/emw4.jpg" alt="featured project"  style="min-width: auto; min-height: auto; max-height: 200px!important; max-width: 95%;">
+												        </a>
+												        <table class="table" style="border:none;">
+													        <tbody style="border:none;">
+													            <tr>
+													                <th scope="row">Reporter:</th>
+													                <td>Mr X</td> 
+													            </tr>
+													            <tr>
+													                <th scope="row">Phone N<sup><u>o</u></sup></th>
+													                <td>0911456978</td>
+													            </tr>
+													            <tr>
+													                <th scope="row">email:</th>
+													                <td>mrx@gmail.com</td>
+													            </tr>
+
+													            <tr>
+													                <th>Message</th>
+													                <td><p style="text-align: justify;">Lorem Ipsum is simply dummy text of the printing and typesetting industry....</p></td>
+													            </tr>
+													        </tbody>
+													    </table>
+												        
+												        <a class="btn btn-dark btn-xs btn-block" href="#">View</a>
+												      </div>
+												    </div>
+												    <div class="col-sm-6 col-md-3 mb-sm-90 mb-md-30">
+												      <div class="icon-box iconbox-theme-colored bg-lighter">
+												        <h5 class="icon-box-title">Abebe Kebede</h5>
+												        <a class="icon icon-dark icon-bordered icon-rounded icon-border-effect effect-rounded" href="#">
+												          <img class="img-responsive img-fullwidth" src="<?php echo base_url()?>assets/images/emw4.jpg" alt="featured project"  style="min-width: auto; min-height: auto; max-height: 200px!important; max-width: 95%;">
+												        </a>
+												        <table class="table" style="border:none;">
+													        <tbody style="border:none;">
+													            <tr>
+													                <th scope="row">Reporter:</th>
+													                <td>Mr X</td> 
+													            </tr>
+													            <tr>
+													                <th scope="row">Phone N<sup><u>o</u></sup></th>
+													                <td>0911456978</td>
+													            </tr>
+													            <tr>
+													                <th scope="row">email:</th>
+													                <td>mrx@gmail.com</td>
+													            </tr>
+
+													            <tr>
+													                <th>Message</th>
+													                <td><p style="text-align: justify;">Lorem Ipsum is simply dummy text of the printing and typesetting industry....</p></td>
+													            </tr>
+													        </tbody>
+													    </table>
+												        
+												        <a class="btn btn-dark btn-xs btn-block" href="#">View</a>
+												      </div>
+												    </div>
+												</div>
+											</div>
+										</div>
+									</section>
+	                                <!-- <embed src="https://www.google.com/maps/@8.9883054,38.768228" width=200 height=200 type="text/html" /> -->
 	                                
 	                            </div>
 	                        </div>
@@ -148,7 +219,36 @@
 	                                </div>
 	                                
 	                                <div class="panel-footer">
-	                                	<h6 align="center">Resently Added</h6>
+	                                	<h6 align="left">Resently Added</h6>
+	                                	<div class="row">
+							        		<div class="col-md-3">
+							         		    <img class="img-fullwidth" src="<?php echo base_url()?>assets/images/emw3.jpg" alt="" style="height: 30px; width: 30px;">         
+							        		</div>
+							        		<div class="col-md-9">
+									          <div class="row">
+									            <div class="col-md-12">
+									              <div class="table-responsive">
+												    <table class="table" style="border:none;">
+												        <thead>
+												            <tr>
+									             			   	<h6 class="mt-0">Abebe Kebede</h6>
+												            </tr>
+												        </thead>
+												        <tbody style="border:none;">
+												            <tr>
+												                <h6>Murder, grievous bodily injury</h6>
+												            </tr>
+												            <tr>
+												                <h6>Male</h6>
+												            </tr>
+												        </tbody>
+												    </table>
+												</div>
+									          </div>
+									      </div>
+									  </div>
+									</div>
+									<hr>
 	                                    <div align="right">
 	                                        <button class="btn btn-success fa fa-plus fa-2x" data-toggle="modal" data-target="#add-staff"></button>
 	                                    </div>
