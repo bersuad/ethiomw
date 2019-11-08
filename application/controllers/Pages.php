@@ -16,4 +16,10 @@ class Pages extends CI_Controller {
 		$this->load->view('pages/single_view');
 		$this->load->view('included/footer');
 	}
+	public function admin()
+	{
+		
+		$this->load->view('pages/admin/admin');
+		
+	}
 }
