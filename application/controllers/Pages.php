@@ -22,4 +22,11 @@ class Pages extends CI_Controller {
 		$this->load->view('pages/admin/admin');
 		
 	}
+
+	public function all_wanted_list()
+	{
+		
+		$this->load->view('pages/admin/all_wanted_list');
+		
+	}
 }

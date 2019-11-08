@@ -51,6 +51,7 @@
 <script src="<?php echo site_url()?>assets/js/jquery-2.2.0.min.js"></script>
 <script src="<?php echo site_url()?>assets/js/jquery-ui.min.js"></script>
 <script src="<?php echo site_url()?>assets/js/bootstrap.min.js"></script>
+
 <!-- JS | jquery plugin collection for this theme -->
 <script src="<?php echo site_url()?>assets/js/jquery-plugin-collection.js"></script>
 
@@ -113,7 +114,7 @@
 	                    <h3 class="panel-title" align="center"> Over View</h3>
 	                </div>
 	                <div class="panel-body" id="over_body">
-	                    <a href="/admin-contact-message"><div class="col-md-4">
+	                    <a href="/admin-contact-message" style="margin-left: -4%;"><div class="col-md-4">
 	                        <div class="well dash-box" id="message">
 	                            <h2 align="center"><span class="fa fa-envelope" aria-hidden></span> 10</h2>
 	                            <h6 align="center">All Contact Mesages</h6>
@@ -215,7 +216,15 @@
 	                            
 	                            <div class="panel panel-default">
 	                                <div class="panel-heading main-color-bg">
-	                                    <h5 class="panel-title" align="center">Add wanted fugitives</h5>
+	                                    <div class="row" align="right" style="display: inline-block;">
+	                                    	<div class="col-md-9">
+	                                    		<h6 class="panel-title" align="left">Add wanted fugitives</h6>
+	                                    	</div>
+	                                    	<div class="col-md-3" align="right">
+	                                        	<button class="btn btn-success btn-sm fa fa-plus fa-2x" data-toggle="modal" data-target="#addModal"></button>
+	                                    		
+	                                    	</div>
+	                                    </div>
 	                                </div>
 	                                
 	                                <div class="panel-footer">
@@ -249,9 +258,7 @@
 									  </div>
 									</div>
 									<hr>
-	                                    <div align="right">
-	                                        <button class="btn btn-success fa fa-plus fa-2x" data-toggle="modal" data-target="#add-staff"></button>
-	                                    </div>
+	                                    
 	                                </div>
 	                            </div>
 	                        </div>
@@ -262,9 +269,107 @@
 	    </div>
 	</div>
 
-
-
-<script src="<?php echo site_url()?>assets/js/custom.js"></script>
+<!-- modal -->
+<div class="modal fade " id="addModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">Add New Fugitive</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+        	<div class="row">
+        		<div class="col-md-4">
+        			<div class="form-group">
+						<label for="recipient-name" class="col-form-label">Name:</label>
+						<input type="text" class="form-control" id="recipient-name" placeholder="Full Name">
+					</div>
+        		</div>
+        		<div class="col-md-4">
+        			<div class="form-group">
+						<label for="recipient-name" class="col-form-label">Gender:</label>
+						<select class="form-control">
+							<option value="empty">-- Select Gender --</option>
+							<option>Male</option>
+							<option>Female</option>
+						</select>
+					</div>
+        		</div>
+        		<div class="col-md-4">
+        			<div class="form-group">
+						<label for="recipient-name" class="col-form-label">DOB:</label>
+						<input type="date" class="form-control" id="recipient-name">
+					</div>
+        		</div>
+        		<div class="col-md-4">
+        			<div class="form-group">
+						<label for="recipient-name" class="col-form-label">Eye Color:</label>
+						<input type="text" class="form-control" id="recipient-name" placeholder="Full Name">
+					</div>
+        		</div>
+        		<div class="col-md-4">
+        			<div class="form-group">
+						<label for="recipient-name" class="col-form-label">Height</label>
+						<input type="text" name="" placeholder="Height" class="form-control">
+					</div>
+        		</div>
+        		<div class="col-md-4">
+        			<div class="form-group">
+						<label for="recipient-name" class="col-form-label">Nationality</label>
+						<input type="text" class="form-control" id="recipient-name" placeholder="Nationality">
+					</div>
+        		</div>
+        		<div class="col-md-4">
+        			<div class="form-group">
+						<label for="recipient-name" class="col-form-label">Case State</label>
+						<input type="text" class="form-control" id="recipient-name" placeholder="Case State">
+					</div>
+        		</div>
+        		<div class="col-md-4">
+        			<div class="form-group">
+						<label for="recipient-name" class="col-form-label">Crime Type</label>
+						<input type="text" name="" placeholder="Height" class="form-control">
+					</div>
+        		</div>
+        		<div class="col-md-4">
+        			<div class="form-group">
+						<label for="recipient-name" class="col-form-label">Speaking Language</label>
+						<input type="text" class="form-control" id="recipient-name" placeholder="Speaking Language">
+					</div>
+        		</div>
+        		
+        		<div class="col-md-6">
+        			<div class="form-group">
+						<label for="recipient-name" class="col-form-label">Crime Type</label>
+						<input type="text" name="" placeholder="Crime Type" class="form-control">
+					</div>
+        		</div>
+        		
+        		<div class="col-md-6">
+        			<div class="form-group">
+						<label for="recipient-name" class="col-form-label">Image</label>
+						<input type="file" name="" placeholder="Height" class="form-control">
+					</div>
+        		</div>
+        		<div class="col-md-12">
+		          <div class="form-group">
+		            <label for="message-text" class="col-form-label">Description:</label>
+		            <textarea id="editor2" name="body" placeholder="Add body" class="form-control" rows="5"></textarea>
+		          </div>
+        		</div>
+        	</div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-border">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script type="text/javascript" src="<?php echo site_url()?>assets/js/revolution-slider/js/extensions/revolution.extension.actions.min.js"></script>
 <script type="text/javascript" src="<?php echo site_url()?>assets/js/revolution-slider/js/extensions/revolution.extension.carousel.min.js"></script>
@@ -274,8 +379,9 @@
 <script type="text/javascript" src="<?php echo site_url()?>assets/js/revolution-slider/js/extensions/revolution.extension.navigation.min.js"></script>
 <script type="text/javascript" src="<?php echo site_url()?>assets/js/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script>
 <script type="text/javascript" src="<?php echo site_url()?>assets/js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script type="text/javascript" src="<?php echo site_url()?>assets/js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
-
-
+<script src="<?php echo site_url()?>assets/js/ckeditor/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'editor2' );
+</script>
 </body>
 </html>
