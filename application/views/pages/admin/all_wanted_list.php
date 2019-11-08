@@ -93,23 +93,7 @@
     <div class="container-fluid" id="admin_css">
 
         <div class="row" style="padding-top: 3%;">
-            <div class="col-md-3" id="left_nav">
-                <div class="panel panel-default">
-                    <div class="panel-heading main-color-bg">
-                        <h3 class="panel-title" align="center"><span class="fa fa-cogs"></span> Dashboard</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="list-group">
-                            <a href="/home" class="list-group-item active"><span class="fa fa-home"></span> Main Dashbord</a>
-                            <a href="#" class="list-group-item" data-toggle="modal" data-target="#add-client"><span class="fa fa-list"></span> All Wanted List</a>
-                            <a href="#" class="list-group-item" data-toggle="modal" data-target="#cargo-status"><span class="fa fa-edit"></span> All Reports</a>
-                            <a href="/admin-all-client" class="list-group-item"><span class="fa fa-pencil"></span> New Crime Report<span class="badge main-color-bg">10</span></a>
-                            <a href="/admin-all-support" class="list-group-item"><span class="fa fa-life-ring"></span> Support Request<span class="badge main-color-bg">10</span></a>
-                            <a href="/home" class="list-group-item"><span class="fa fa-cog"></span> Setting</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            ፩
             <div class="col-md-9">
 
                 <h4>All Posted Fugitives</h4>
