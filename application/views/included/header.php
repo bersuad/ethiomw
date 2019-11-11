@@ -91,7 +91,7 @@
 <div id="wrapper" class="clearfix">
   
   <header id="header" class="header">
-    <div class="header-top bg-deep sm-text-center">
+    <div class="header-top main-color-bg sm-text-center">
       <div class="container">
         <div class="row">
           <div class="col-md-3">

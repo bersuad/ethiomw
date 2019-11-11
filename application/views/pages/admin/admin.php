@@ -1,6 +1,6 @@
    
 	        <div class="col-lg-9" id="over_view">
-	            <div class="panel panel-default">
+	            <div class="panel panel-default" style="border:none;">
 	                <div class="panel-heading main-color-bg">
 	                    <h3 class="panel-title" align="center"> Over View</h3>
 	                </div>
@@ -13,8 +13,8 @@
 	                    </div></a>
 	                    <a href="#" data-toggle="modal" data-target="#client-answer"><div class="col-md-4">
 	                        <div class="well dash-box" id="customer_question">
-	                            <h2 align="center">10 <span class="fa fa-question fa-lg" aria-hidden></span></h2>
-	                            <h6 align="center">Customer Questions</h6>
+	                            <h2 align="center"><span class="fa fa-life-ring fa-lg" aria-hidden></span> 10</h2>
+	                            <h6 align="center">Customer Support</h6>
 	                        </div>
 	                    </div></a>
 	                    <a href="#"><div class="col-md-4">
@@ -23,13 +23,15 @@
 	                            <h6 align="center">All Wanted List</h6>
 	                        </div>
 	                    </div></a>
-	                    <div class="row">
+	                    
+	                </div>
+	                <div class="row">
 	                        <div class="col-lg-8">
 	                            <div class="panel panel-default">
 	                                <div class="panel-heading main-color-bg">
 	                                    <h3 class="panel-title" align="center">Fugitives Reports</h3>
 	                                </div>
-	                                <section class="text-center" style="margin-top: -8%;">
+	                                <section class="text-center" style="margin-top: -3%;">
 										<div class="container">
 											<div class="section-content">
 											  	<div class="row multi-row-clearfix">
@@ -107,13 +109,13 @@
 	                            <div class="panel panel-default">
 	                                <div class="panel-heading main-color-bg">
 	                                    <div class="row" align="right" style="display: inline-block;">
-	                                    	<div class="col-md-9">
-	                                    		<h6 class="panel-title" align="left">Add wanted fugitives</h6>
+	                                    	<div class="col-md-12">
+	                                    		<h6 class="panel-title" align="left">Resently Added fugitives</h6>
 	                                    	</div>
-	                                    	<div class="col-md-3" align="right">
+	                                    	<!-- <div class="col-md-3" align="right">
 	                                        	<button class="btn btn-success btn-sm fa fa-plus fa-2x" data-toggle="modal" data-target="#addModal"></button>
 	                                    		
-	                                    	</div>
+	                                    	</div> -->
 	                                    </div>
 	                                </div>
 	                                
@@ -180,7 +182,6 @@
 	                            </div>
 	                        </div>
 	                    </div>
-	                </div>
 	            </div>
 	        </div>
 	    </div>

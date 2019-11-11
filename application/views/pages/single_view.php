@@ -50,7 +50,7 @@
 		              <div class="row">
 		              	<div class="col-md-6">
 			              	<div align="center">
-			              		<button class="btn btn-border btn-block" data-toggle="modal" data-target="#exampleModal" >Report</button>
+			              		<button class="btn btn-border btn-block" data-toggle="modal" data-target="#reportModal" >Report</button>
 			              	</div>		              		
 		              	</div>
 		              	<div class="col-md-3">
@@ -141,7 +141,7 @@
 
 
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+<div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -154,19 +154,19 @@
         <form>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Name:</label>
-            <input type="text" class="form-control" id="recipient-name">
+            <input type="text" class="form-control" placeholder="Your Name" name="user_name">
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Phone N<sup><u>o</u></sup>:</label>
-            <input type="text" class="form-control" id="recipient-name">
+            <input type="text" class="form-control" placeholder="Phone Number" name="phone_number">
           </div>
           <div class="form-group">
-            <label for="message-text" class="col-form-label">email:</label>
-            <input type="text" class="form-control" id="recipient-name">
+            <label for="message-text" class="col-form-label">Email:</label>
+            <input type="text" class="form-control" placeholder="Email" name="email">
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text" rows="5"></textarea>
+            <textarea class="form-control" id="message-text" rows="5" placeholder="Message" name="message"></textarea>
           </div>
         </form>
       </div>

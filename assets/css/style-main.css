@@ -6555,7 +6555,11 @@ blockquote p {
   color: #fff!important;
 }
 
+.main-color-bg a{
+  color: #fff!important;
+}
+
 .panel-heading{
-  background-color: #182c31;
-  color: #fff;
+  background-color: #182c31!important;
+  color: #fff!important;
 }
