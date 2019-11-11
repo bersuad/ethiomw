@@ -6545,3 +6545,17 @@ blockquote p {
   border-color: #eeeeee;
   color: #333333;
 }
+
+#left_nav .active{
+  background-color: #182c31;
+  color: #fff;
+}
+.main-color-bg{
+  background-color: #182c31!important;
+  color: #fff!important;
+}
+
+.panel-heading{
+  background-color: #182c31;
+  color: #fff;
+}

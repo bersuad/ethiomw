@@ -18,15 +18,15 @@ class Pages extends CI_Controller {
 	}
 	public function admin()
 	{
-		
+		$this->load->view('included/admin/header.php');
 		$this->load->view('pages/admin/admin');
-		
+		$this->load->view('included/admin/footer.php');
 	}
 
 	public function all_wanted_list()
 	{
-		
+		$this->load->view('included/admin/header.php');
 		$this->load->view('pages/admin/all_wanted_list');
-		
+		$this->load->view('included/admin/footer.php');		
 	}
 }
