@@ -116,6 +116,8 @@
           <div class="col-md-9">
             <div class="widget no-border m-0">
               <ul class="list-inline pull-right sm-pull-none sm-text-center mt-5">
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope text-theme-colored"></i> <a class="text-gray" href="#" data-toggle="modal" data-target="#commentForm">Comment</a> </li>
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-exclamation-circle text-theme-colored"></i> <a class="text-gray" href="#" data-toggle="modal" data-target="#crimeReport">Crime Report</a> </li>
                 <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-colored"></i> <a class="text-gray" href="#">6583</a> </li>
                 <li class="m-0 pl-10 pr-10"> <i class="fa fa-clock-o text-theme-colored"></i> 24/7 </li>
                 	<a href="#" id="side-panel-trigger" class="side-panel-trigger"><i class="fa fa-bars fa-lg text-gray"></i></a>

@@ -48,6 +48,75 @@
   <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
 </div>
 
+<!-- crime report -->
+<div class="modal fade" id="crimeReport" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">Crime Report</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Name:</label>
+            <input type="text" class="form-control" placeholder="Your Name" name="user_name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Phone N<sup><u>o</u></sup>:</label>
+            <input type="text" class="form-control" placeholder="Phone Number" name="phone_number">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Email:</label>
+            <input type="text" class="form-control" placeholder="Email" name="email">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text" rows="5" placeholder="Message" name="message"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-border">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- comment -->
+<div class="modal fade" id="commentForm" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">Your Comment</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Email:</label>
+            <input type="text" class="form-control" placeholder="Email" name="email">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text" rows="5" placeholder="Message" name="message"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-border">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
 <script src="<?php echo site_url()?>assets/js/custom.js"></script>
 
 <script type="text/javascript" src="<?php echo site_url()?>assets/js/revolution-slider/js/extensions/revolution.extension.actions.min.js"></script>

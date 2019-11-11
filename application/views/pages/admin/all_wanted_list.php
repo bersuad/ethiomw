@@ -135,11 +135,45 @@
                                   <td>On Investigation</td>
                                   <td>Drug Traficing</td>
                                   <td>
-                                    <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#editModal"><i class="fa fa-edit fa-sm"></i></button><button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteNo"><i class="fa fa-remove fa-sm"></i></button> 
+                                    <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#editModal"><i class="fa fa-edit fa-sm"></i></button> <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteNo"><i class="fa fa-remove fa-sm"></i></button> 
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>8</td>
+                                  <td>Mr x</td>
+                                  <td>Male</td>
+                                  <td>19/05/1992 G.C.</td>
+                                  <td>1.70 M</td>
+                                  <td>Ethiopian</td>
+                                  <td>On Investigation</td>
+                                  <td>Drug Traficing</td>
+                                  <td>
+                                    <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#editModal"><i class="fa fa-edit fa-sm"></i></button> <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteNo"><i class="fa fa-remove fa-sm"></i></button> 
                                   </td>
                                 </tr>
                               </tbody>
                             </table>
+                        </div>
+                        <div align="left">
+                          <nav>
+                            <ul class="pagination theme-colored">
+                              <li>
+                                <a href="#" aria-label="Previous">
+                                  <span aria-hidden="true">&laquo;</span>
+                                </a>
+                              </li>
+                              <li class="active"><a href="#">1</a></li>
+                              <li><a href="#">2</a></li>
+                              <li><a href="#">3</a></li>
+                              <li><a href="#">4</a></li>
+                              <li><a href="#">5</a></li>
+                              <li>
+                                <a href="#" aria-label="Next">
+                                  <span aria-hidden="true">&raquo;</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </nav>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="profile2">
@@ -166,7 +200,7 @@
                                   <td>19/05/1992 G.C.</td>
                                   <td>1.70 M</td>
                                   <td>Ethiopian</td>
-                                  <td>On Investigation</td>
+                                  <td>Arrested</td>
                                   <td>Drug Traficing</td>
                                   <td>
                                     <button class="btn btn-success btn-xs"><i class="fa fa-edit fa-sm"></i></button> <button class="btn btn-danger btn-xs"><i class="fa fa-remove fa-sm"></i></button> 

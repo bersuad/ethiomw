@@ -6547,7 +6547,7 @@ blockquote p {
 }
 
 #left_nav .active{
-  background-color: #182c31;
+  background-color: rgba(24, 44, 49, 0.9);
   color: #fff;
 }
 .main-color-bg{
@@ -6562,4 +6562,8 @@ blockquote p {
 .panel-heading{
   background-color: #182c31!important;
   color: #fff!important;
+}
+
+#blog_view{
+  width: 70%!important;
 }

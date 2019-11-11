@@ -6,7 +6,7 @@ class Pages extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('included/header');
-		$this->load->view('index');
+		$this->load->view('pages/index');
 		$this->load->view('included/footer');
 	}
 
@@ -48,6 +48,20 @@ class Pages extends CI_Controller {
 	{
 		$this->load->view('included/admin/header.php');
 		$this->load->view('pages/admin/setting');
+		$this->load->view('included/admin/footer.php');		
+	}
+
+	public function crime_report()
+	{
+		$this->load->view('included/admin/header.php');
+		$this->load->view('pages/admin/crime_report');
+		$this->load->view('included/admin/footer.php');		
+	}
+
+	public function comment()
+	{
+		$this->load->view('included/admin/header.php');
+		$this->load->view('pages/admin/comment');
 		$this->load->view('included/admin/footer.php');		
 	}
 }

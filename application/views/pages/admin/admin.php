@@ -4,8 +4,8 @@
 	                <div class="panel-heading main-color-bg">
 	                    <h3 class="panel-title" align="center"> Over View</h3>
 	                </div>
-	                <div class="panel-body" id="over_body">
-	                    <a href="/admin-messages" style="margin-left: -4%;"><div class="col-md-4">
+	                <div class="panel-body row" id="over_body">
+	                    <a href="#" style="margin-left: -4%;"><div class="col-md-4">
 	                        <div class="well dash-box" id="message">
 	                            <h2 align="center"><span class="fa fa-envelope" aria-hidden></span> 10</h2>
 	                            <h6 align="center">All Contact Mesages</h6>
@@ -13,8 +13,8 @@
 	                    </div></a>
 	                    <a href="#" data-toggle="modal" data-target="#client-answer"><div class="col-md-4">
 	                        <div class="well dash-box" id="customer_question">
-	                            <h2 align="center"><span class="fa fa-life-ring fa-lg" aria-hidden></span> 10</h2>
-	                            <h6 align="center">Customer Support</h6>
+	                            <h2 align="center"><span class="fa fa-life-ring fa-lg" aria-hidden></span> 1</h2>
+	                            <h6 align="center">New Crime Report</h6>
 	                        </div>
 	                    </div></a>
 	                    <a href="#"><div class="col-md-4">

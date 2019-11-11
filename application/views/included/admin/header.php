@@ -42,19 +42,38 @@
 <body class="has-side-panel side-panel-right fullwidth-page side-push-panel">
     <header id="header" class="header">
         <div class="header-top main-color-bg sm-text-center">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-3">
                         <div class="widget no-border m-0">
                             <ul class="social-icons icon-sm sm-text-center">
-                                <h5 style="color: #fff;">Ethio Most wonted control room</h5>
+                                <h5 style="color: #fff;">Ethio Most Wonted Control Room</h5>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-9">
                         <div class="widget no-border m-0">
                             <ul class="list-inline pull-right sm-pull-none sm-text-center mt-5">
-                                <li class="m-0 pl-10 pr-10"><a href="#"> New Crime Report <sup><small class="badge" style="background-color: #d60808; color: #fff;">4</small></sup></a></li>
+                                <li class="dropdown" class="m-0 pl-10 pr-10">
+                                  <a class="dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button" data-hover="dropdown">
+                                    <span class="fa fa-bell"></span> New Crime Report <sup><sup><small><b class="badge" style="background-color: #d60808; color: #fff;">1</b></small></sup></sup>
+                                  </a>
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-top: 10%;">
+                                    <div class="container content" style="max-width: 230px; color: #444;">
+                                        <div class="blog">
+                                            <div class="blog-pargraph">
+                                                <h6><i class="fa fa-user fa-sm"></i> <label style="color: #000;">Abebe</label></h6>
+                                                <h6><i class="fa fa-envelope fa-sm"></i> <label style="color: #000;"> mrx@gmail.com</label></h6>
+                                                <h6><i class="fa fa-phone fa-sm"></i> <label style="color: #000;">+251911111111</label></h6>
+                                                <label style="color: #000;">Message:</label><p> It is a long established fact that readable when looking at its layout...</p>
+                                            </div>
+                                            <button class="btn btn-border btn-block">View</button>
+                                            <hr>
+                                        <br>
+                                      </div>
+                                  </div>
+                                </li>
+                                <!-- <li class="m-0 pl-10 pr-10"><a href="#"> New Crime Report <sup><small class="badge" style="background-color: #d60808; color: #fff;">4</small></sup></a></li> -->
                                 <li class="m-0 pl-10 pr-10"> <a href="#"><img class="image" src="<?php echo base_url()?>assets/images/emw4.jpg" alt="featured project"  style="min-width: auto; min-height: auto; max-height: 30px!important; max-width: 30px; border-radius: 50%; margin-top: -5%;"></a></li>
                                 </li>
                                 <?php
@@ -96,9 +115,10 @@
                   <div class="list-group">
                     <a href="<?php echo base_url()?>admin" class="<?=(current_url()==base_url('admin')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-home"></span> Main Dashbord</a>
                     <a href="<?php echo base_url()?>all-wanted" class="<?=(current_url()==base_url('all-wanted')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-list"></span> All Wanted List</a>
-                    <a href="<?php echo base_url()?>all-reported" class="<?=(current_url()==base_url('all-reported')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-edit"></span> All Reports</a>
-                    <a href="#" class="list-group-item"><span class="fa fa-life-ring"></span> Support Request<span class="badge main-color-bg">10</span></a>
-                    <a href="/home" class="list-group-item"><span class="fa fa-envelope"></span> Message <span class="badge main-color-bg">4</span></a>
+                    <a href="<?php echo base_url()?>all-reported" class="<?=(current_url()==base_url('all-reported')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-edit"></span> All Fugitives Reports</a>
+                    <a href="<?php echo base_url()?>all-crime-report" class="<?=(current_url()==base_url('all-crime-report')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-bell"></span> New Crime Reports <span class="badge main-color-bg">1</span></a>
+                    <!-- <a href="#" class="list-group-item"><span class="fa fa-life-ring"></span> Support Request<span class="badge main-color-bg">10</span></a> -->
+                    <a href="<?php echo base_url()?>comment"  class="<?=(current_url()==base_url('comment')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-envelope"></span> Message <span class="badge main-color-bg">4</span></a>
                     <a href="<?php base_url()?>settings" class="<?=(current_url()==base_url('settings')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-cogs"></span> Settings</a>
                   </div>
                 </div>
