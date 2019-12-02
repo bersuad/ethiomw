@@ -105,7 +105,7 @@
 
         TM_preLoaderOnLoad: function() {
             var $preloader = $('#preloader');
-            $preloader.delay(200).fadeOut('slow');
+            $preloader.delay(900).fadeOut('slow');
         },
 
 
@@ -200,7 +200,7 @@
         /* ----------------------------- Magnific Popup ------------------------- */
         /* ---------------------------------------------------------------------- */
         TM_magnificPopup_lightbox: function() {
-            
+
             $('.image-popup-lightbox').magnificPopup({
                 type: 'image',
                 closeOnContentClick: true,
@@ -284,9 +284,9 @@
                         return element.find('img');
                     }
                 }
-                
+
             });
-            
+
             $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
                 disableOn: 700,
                 type: 'iframe',
@@ -332,7 +332,7 @@
             $('.form-ajax-load').magnificPopup({
               type: 'ajax'
             });
-            
+
             $('.popup-with-form').magnificPopup({
                 type: 'inline',
                 preloader: false,
@@ -451,7 +451,7 @@
                 hook: 'data-rel',
                 animation_speed:'normal',
                 theme:'light_square',
-                slideshow:3000, 
+                slideshow:3000,
                 autoplay_slideshow: false,
                 social_tools: false
             });
@@ -627,7 +627,7 @@
                 e.preventDefault();
 
                 var $anchor = $(this);
-                
+
                 var $hearder_top = $('.header .header-nav');
                 var hearder_top_offset = 0;
                 if ($hearder_top[0]){
@@ -703,7 +703,7 @@
                 indicatorFirstLevel: "<i class='fa fa-angle-right'></i>",
                 indicatorSecondLevel: "<i class='fa fa-angle-right'></i>"
             });
-            
+
             $("#menuzord-verticalnav").menuzord({
                 align: "right",
                 effect: "slide",
@@ -848,7 +848,7 @@
 
             //on scolling, show/animate timeline blocks when enter the viewport
             $(window).on('scroll', function(){
-              (!window.requestAnimationFrame) 
+              (!window.requestAnimationFrame)
                 ? setTimeout(function(){ showBlocks(timelineBlocks, offset); }, 100)
                 : window.requestAnimationFrame(function(){ showBlocks(timelineBlocks, offset); });
             });
@@ -886,7 +886,7 @@
                     var last_child_offset = parseInt(last_child.css('top'));
                     var prev_last_offset  = parseInt(prev_last.css('top'));
                     var offset_icon       = last_child_offset - prev_last_offset;
-                    
+
                     var go_top_to = 0;
                     if(offset_icon){
                         if ( offset_icon <= 87 ){
@@ -897,7 +897,7 @@
                             }, 300);
                         }
                     }
-                    
+
                     if( $(this).position().left === 0 ){
                         $(this).removeClass('item-right');
                         $(this).addClass('item-left');
@@ -908,7 +908,7 @@
                 });
             }
             timeline_on_left_and_right();
-            
+
             $(window).resize(function() {
                 timeline_on_left_and_right();
             });
@@ -933,7 +933,7 @@
                     filter: "*"
                 });
             });
-            
+
             //isotope filter
             $portfolio_filter.click(function(){
                 $portfolio_filter.removeClass("active");
@@ -947,7 +947,7 @@
                 });
                 return false;
             });
-            
+
             THEMEMASCOT.slider.TM_flexslider();
 
         },
@@ -1006,7 +1006,7 @@
             });
         },
 
-        
+
         /* ---------------------------------------------------------------------- */
         /* ----------------------- pie chart / circle skill bar ----------------- */
         /* ---------------------------------------------------------------------- */
@@ -1038,7 +1038,7 @@
                 }
             });
         },
-        
+
         /* ---------------------------------------------------------------------- */
         /* ------------------- progress bar / horizontal skill bar -------------- */
         /* ---------------------------------------------------------------------- */
@@ -1052,7 +1052,7 @@
                     var barcolor = current_item.data('barcolor');
                     current_item.append('<span class="percent">' + percent + '%' + '</span>').css('background-color', barcolor).css('width', percent + '%').addClass('appeared');
                 }
-                
+
             });
         },
 
@@ -1357,8 +1357,8 @@
                 loop: true,
                 dots: true,
                 nav: false
-            }); 
-        
+            });
+
             $(".attorney-carousel").owlCarousel({
                 rtl: THEMEMASCOT.isRTL.check(),
                 autoplay: true,
@@ -1391,7 +1391,7 @@
                     }
                 }
             });
-            
+
             $(".gallery-list-carosel").owlCarousel({
                 rtl: THEMEMASCOT.isRTL.check(),
                 autoplay: true,
@@ -1550,7 +1550,7 @@
                     }
                 });
             });
-            
+
             $(".clients-logo.carousel").owlCarousel({
                 rtl: THEMEMASCOT.isRTL.check(),
                 autoplay: true,
@@ -1706,7 +1706,7 @@
                     '<i class="pe-7s-angle-left"></i>',
                     '<i class="pe-7s-angle-right"></i>'
                 ]
-            });            
+            });
         },
 
 
@@ -1787,7 +1787,7 @@
     $window.load(
         THEMEMASCOT.windowOnLoad.init
     );
-    $window.on('resize', 
+    $window.on('resize',
         THEMEMASCOT.windowOnResize.init
     );
 

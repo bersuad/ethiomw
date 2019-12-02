@@ -1,188 +1,94 @@
 
 
-<section class="bg-lighter">
+<section class="bg-lighter" style="background-color:#ffffff">
   <div class="container pb-30">
     <div class="section-title title-border icon-bg">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="mt-0 page-title"><i class="fa fa-bookmark"></i> &nbsp; Ethiopian Most Wanted Fugitives</h2>
+          <input type="hidden" id="take_id_pagination" value="1">
+          <h4 class="mt-0 page-title"><i class="fa fa-bookmark"></i> &nbsp; Ethiopian Most Wanted Criminal And Suspects
+          </h4>
+          <span class="response_success"></span>
+
+        </div>
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="form-group">
+                <span>Filter By</span>
+                <select class="form-control" onchange="filterByCrimeType(this.value,'crime')" id="filter_by_crime">
+                  <option value="">--Crime Category--</option>
+                  <?php foreach($crime_type as $row) {?>
+                  <option value="<?php echo $row->setting_id?>"><?php echo ucwords($row->setting_crime_name);?></option>
+                <?php } ?>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-lg-3">
+              <div class="form-group">
+                <span>Filter By</span>
+                <select class="form-control" onchange="filterByCrimeType(this.value,'year')" id="filter_by_year">
+                  <option value="">-- Year --</option>
+                 <?php foreach($year as $row) {?>
+                  <option  value="<?php echo $row->criminal_date;?>">
+                    <?php echo $row->criminal_date;?>
+                  </option>
+<?php } ?>
+                </select>
+              </div>
+              </div>
+              <div class="col-lg-3" style="border-left: 2px solid #eee;">
+                <div class="form-group">
+                  <span>Search By</span>
+                  <div class="input-group">
+                    <input type="text" name="" class="form-control" placeholder="Criminal And Suspects Name" id="filter_by_name">
+
+                  <span class="input-group-addon" onclick="filterDataByName()" style="cursor:pointer">
+                    <a class="mouseup_mousedown_old" ><i class="icon icon_search">
+                  </i></a></span>
+                </div>
+                </div>
+              </div>
+
+          </div>
         </div>
       </div>
     </div>
     <div class="section-content">
       <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-3 mb-30">
-          <div class="box-hover-effect effect2 bg-lightest-gray wow fadeInUp maxwidth400 p-10" data-wow-duration="1.5s" data-wow-offset="10" style="box-shadow: 0 5px 35px -16px #888888; height: 340px;">
-          	<div class="" style="position: absolute; z-index: 99999; background-color: rgba(173, 6, 6, 0.6); width: 92%; text-align: center; color: #fff;">
-        		<h6 align="center" style="color: #fff;"><b> Reward </b></h6>
-        	</div>
-            <div class="thumb"> <img class="img-responsive img-fullwidth" src="<?php echo base_url()?>assets/images/emw4.jpg" alt="featured project"  style="min-width: auto; min-height: auto; max-height: 320px!important; max-width: 95%;">
-              <div class="overlay black">
-                <div class="display-table">
-                  <div class="display-table-cell">
-                    <div class="overlay-details text-center">
-                      <h4 class="text-theme-colored mt-0">Abebe Kebede</h4>
-                      <p class="pl-20 pr-20">Our experienced lawyers offer great trial preparation.</p>
-                      <a class="btn btn-gray btn-theme-colored btn-xs" href="<?php echo site_url('single-view')?>">Read more</a>
-                  	</div>
-                  </div>
-                </div>
-              </div>
-              <div class="details" align="center" style="margin-top: 5%;">
-                <h5>Aster Kebede</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3 mb-30">
-          <div class="box-hover-effect effect2 bg-lightest-gray wow fadeInUp maxwidth400 p-10" data-wow-duration="1.5s" data-wow-offset="10" style="box-shadow: 0 5px 35px -16px #888888; height: 340px;">
-
-            <div class="thumb"> <img class="img-responsive img-fullwidth" src="<?php echo base_url()?>assets/images/emw.jpg" alt="featured project"  style="min-width: auto; min-height: auto; max-height: 320px!important; max-width: 95%;">
-              <div class="overlay black">
-                <div class="display-table">
-                  <div class="display-table-cell">
-                    <div class="overlay-details text-center">
-                      <h4 class="text-theme-colored mt-0">Abebe Kebede</h4>
-                      <p class="pl-20 pr-20">Our experienced lawyers offer great trial preparation.</p>
-                      <a class="btn btn-gray btn-theme-colored btn-xs" href="<?php echo site_url('single-view')?>">Read more</a>
-                  	</div>
-                  </div>
-                </div>
-              </div>
-              <div class="details" align="center" style="margin-top: 5%;">
-                <h5>Aster Kebede</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3 mb-30">
-          <div class="box-hover-effect effect2 bg-lightest-gray wow fadeInUp maxwidth400 p-10" data-wow-duration="1.5s" data-wow-offset="10" style="box-shadow: 0 5px 35px -16px #888888; height: 340px;">
-            <div class="thumb"> <img class="img-responsive img-fullwidth" src="<?php echo base_url()?>assets/images/emw3.jpg" alt="featured project"  style="min-width: auto; min-height: auto; max-height: 320px!important; max-width: 95%;">
-              <div class="overlay black">
-                <div class="display-table">
-                  <div class="display-table-cell">
-                    <div class="overlay-details text-center">
-                      <h4 class="text-theme-colored mt-0">Abebe Kebede</h4>
-                      <p class="pl-20 pr-20">Our experienced lawyers offer great trial preparation.</p>
-                      <a class="btn btn-gray btn-theme-colored btn-xs" href="<?php echo site_url('single-view')?>">Read more</a>
-                  	</div>
-                  </div>
-                </div>
-              </div>
-              <div class="details" align="center" style="margin-top: 5%;">
-                <h5>Aster Kebede</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3 mb-30">
-          <div class="box-hover-effect effect2 bg-lightest-gray wow fadeInUp maxwidth400 p-10" data-wow-duration="1.5s" data-wow-offset="10" style="box-shadow: 0 5px 35px -16px #888888; height: 340px;">
-            <div class="thumb"> <img class="img-responsive img-fullwidth" src="<?php echo base_url()?>assets/images/emw2.png" alt="featured project"  style="min-width: auto; min-height: auto; max-height: 320px!important; max-width: 95%;">
-              <div class="overlay black">
-                <div class="display-table">
-                  <div class="display-table-cell">
-                    <div class="overlay-details text-center">
-                      <h4 class="text-theme-colored mt-0">Abebe Kebede</h4>
-                      <p class="pl-20 pr-20">Our experienced lawyers offer great trial preparation.</p>
-                      <a class="btn btn-gray btn-theme-colored btn-xs" href="<?php echo site_url('single-view')?>">Read more</a>
-                  	</div>
-                  </div>
-                </div>
-              </div>
-              <div class="details" align="center" style="margin-top: 5%;">
-                <h5>Aster Kebede</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3 mb-30">
-          <div class="box-hover-effect effect2 bg-lightest-gray wow fadeInUp maxwidth400 p-10" data-wow-duration="1.5s" data-wow-offset="10" style="box-shadow: 0 5px 35px -16px #888888; height: 340px;">
-        	
-            <div class="thumb"> <img class="img-responsive img-fullwidth" src="<?php echo base_url()?>assets/images/emw3.jpg" alt="featured project"  style="min-width: auto; min-height: auto; max-height: 320px!important; max-width: 95%;">
-              <div class="overlay black">
-                <div class="display-table">
-                  <div class="display-table-cell">
-                    <div class="overlay-details text-center">
-                      <h4 class="text-theme-colored mt-0">Abebe Kebede</h4>
-                      <p class="pl-20 pr-20">Our experienced lawyers offer great trial preparation.</p>
-                      <a class="btn btn-gray btn-theme-colored btn-xs" href="<?php echo site_url('single-view')?>">Read more</a>
-                  	</div>
-                  </div>
-                </div>
-              </div>
-              <div class="details" align="center" style="margin-top: 5%;">
-                <h5>Aster Kebede</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3 mb-30">
-          <div class="box-hover-effect effect2 bg-lightest-gray wow fadeInUp maxwidth400 p-10" data-wow-duration="1.5s" data-wow-offset="10" style="box-shadow: 0 5px 35px -16px #888888; height: 340px;">
-        	<div class="" style="position: absolute; z-index: 99999; background-color: rgba(173, 6, 6, 0.6); width: 92%; text-align: center; color: #fff;">
-        		<h6 align="center" style="color: #fff;"><b> Reward </b></h6>
-        	</div>
-            <div class="thumb">
-        	<img class="img-responsive img-fullwidth" src="<?php echo base_url()?>assets/images/emw2.png" alt="featured project"  style="min-width: auto; min-height: auto; max-height: 320px!important; max-width: 95%;">
-              <div class="overlay black">
-                <div class="display-table">
-                  <div class="display-table-cell">
-                    <div class="overlay-details text-center">
-                      <h4 class="text-theme-colored mt-0">Abebe Kebede</h4>
-                      <p class="pl-20 pr-20">Our experienced lawyers offer great trial preparation.</p>
-                      <a class="btn btn-gray btn-theme-colored btn-xs" href="<?php echo site_url('single-view')?>">Read more</a>
-                  	</div>
-                  </div>
-                </div>
-              </div>
-              <div class="details" align="center" style="margin-top: 5%;">
-                <h5>Aster Kebede</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3 mb-30">
-          <div class="box-hover-effect effect2 bg-lightest-gray wow fadeInUp maxwidth400 p-10" data-wow-duration="1.5s" data-wow-offset="10" style="box-shadow: 0 5px 35px -16px #888888; height: 340px;">
-            <div class="thumb"> <img class="img-responsive img-fullwidth" src="<?php echo base_url()?>assets/images/emw3.jpg" alt="featured project"  style="min-width: auto; min-height: auto; max-height: 320px!important; max-width: 95%;">
-              <div class="overlay black">
-                <div class="display-table">
-                  <div class="display-table-cell">
-                    <div class="overlay-details text-center">
-                      <h4 class="text-theme-colored mt-0">Abebe Kebede</h4>
-                      <p class="pl-20 pr-20">Our experienced lawyers offer great trial preparation.</p>
-                      <a class="btn btn-gray btn-theme-colored btn-xs" href="<?php echo site_url('single-view')?>">Read more</a>
-                  	</div>
-                  </div>
-                </div>
-              </div>
-              <div class="details" align="center" style="margin-top: 5%;">
-                <h5>Aster Kebede</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3 mb-30">
-          <div class="box-hover-effect effect2 bg-lightest-gray wow fadeInUp maxwidth400 p-10" data-wow-duration="1.5s" data-wow-offset="10" style="box-shadow: 0 5px 35px -16px #888888; height: 340px;">
-            <div class="thumb"> <img class="img-responsive img-fullwidth" src="<?php echo base_url()?>assets/images/emw.jpg" alt="featured project"  style="min-width: auto; min-height: auto; max-height: 320px!important; max-width: 95%;">
-              <div class="overlay black">
-                <div class="display-table">
-                  <div class="display-table-cell">
-                    <div class="overlay-details text-center">
-                      <h4 class="text-theme-colored mt-0">Abebe Kebede</h4>
-                      <p class="pl-20 pr-20">Our experienced lawyers offer great trial preparation.</p>
-                      <a class="btn btn-gray btn-theme-colored btn-xs" href="<?php echo site_url('single-view')?>">Read more</a>
-                  	</div>
-                  </div>
-                </div>
-              </div>
-              <div class="details" align="center" style="margin-top: 5%;">
-                <h5>Aster Kebede</h5>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="load_fugitive"></div>
+    <div class="col-md-12" id="loading"></div>
+      </div>
+      <?php if($pagination['posted_count']) {?>
+      <div align="left">
+      <nav>
+      <ul class="pagination theme-colored">
+      <li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <?php for($i=1;$i<=$pagination['posted_count'];$i++) {?>
+      <?php if($i==1) {?>
+      <li ><a style="background-color:#bf9e58;" id="<?php echo $i;?>" href="javascript:;" onclick="loadFugitive(<?php echo $i;?>,'all','all')"><?php echo $i;?></a></li>
+      <?php } else {?>
+      <li><a href="javascript:;" id="<?php echo $i;?>" onclick="loadFugitive(<?php echo $i;?>,'all','all')"><?php echo $i;?></a></li>
+      <?php } } ?>
+      <li>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+      </ul>
+      </nav>
+    <?php } ?>
       </div>
     </div>
+
   </div>
 </section>
+<script>
 
 
+</script>

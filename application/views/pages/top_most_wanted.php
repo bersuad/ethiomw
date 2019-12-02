@@ -1,0 +1,67 @@
+
+
+<section class="bg-lighter">
+  <div class="container pb-30">
+    <div class="section-title title-border icon-bg">
+      <div class="row">
+        <div class="col-md-12">
+          <input type="hidden" id="take_id_pagination" value="1">
+          <h4 class="mt-0 page-title"><i class="fa fa-bookmark"></i> &nbsp; Ethiopian Most Wanted Criminal And Suspects
+          </h4>
+          <span class="response_success"></span>
+
+        </div>
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="form-group">
+                <span>Filter By</span>
+                <select class="form-control" onchange="filterByCrimeType(this.value,'crime')" id="filter_by_crime">
+                  <option value="">--Crime Category--</option>
+                  <?php foreach($crime_type as $row) {?>
+                  <option value="<?php echo $row->setting_id?>"><?php echo ucwords($row->setting_crime_name);?></option>
+                <?php } ?>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-lg-3">
+              <div class="form-group">
+                <span>Filter By</span>
+                <select class="form-control" onchange="filterByCrimeType(this.value,'year')" id="filter_by_year">
+                  <option value="">-- Year --</option>
+                 <?php foreach($year as $row) {?>
+                  <option  value="<?php echo $row->criminal_date;?>">
+                    <?php echo $row->criminal_date;?>
+                  </option>
+                      <?php } ?>
+                </select>
+              </div>
+              </div>
+              <div class="col-lg-3" style="border-left: 2px solid #eee;">
+                <div class="form-group">
+                  <span>Search By</span>
+                  <div class="input-group">
+                    <input type="text" name="" class="form-control" placeholder="Criminal And Suspect Name" id="filter_by_name">
+
+                  <span class="input-group-addon" onclick="filterDataByName()" style="cursor:pointer">
+                    <a class="mouseup_mousedown_old" ><i class="icon icon_search">
+                  </i></a></span>
+                </div>                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-content">
+      <div class="row">
+        <div id="load_fugitive_top_most"></div>
+    <div class="col-md-12" id="loading"></div>
+      </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
