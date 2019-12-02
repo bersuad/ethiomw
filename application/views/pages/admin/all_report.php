@@ -1,5 +1,6 @@
 
             <div class="col-md-9" style="margin-top:-45px">
+<<<<<<< HEAD
               <div class="row">
                 <br>
                 <div class="col-md-8">
@@ -17,6 +18,9 @@
               </div>
                 </div>
               </div>
+=======
+              <h4>All Reported Criminal And Suspects</h4>
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
                 <div id="myTabContent2" class="tab-content">
                     <div class="tab-pane fade in active" id="home2">
                         <div class="row">

@@ -7,7 +7,10 @@ class FrontController extends MY_Controller {
 	    parent::__construct();
 	    $this->load->database();
 	    $this->load->model('criminal_model');
+<<<<<<< HEAD
 			$this->load->model('setting_model');
+=======
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 	    $this->load->helper(array('form', 'url'));
 	    $this->load->library('form_validation');
 	    // $this->load->model('admin/order_model');
@@ -21,18 +24,22 @@ class FrontController extends MY_Controller {
 	  		echo $pin;
 	  		return true;
 	  	}
+<<<<<<< HEAD
    public function filterData()
    {
     $setting_id=$_GET['setting_id'];
     $type=$_GET['type'];
 
    }
+=======
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 		public function index()
 		  {
 		// $this->session->sess_destroy();
 		    $this->load->view('included/header');
 		    $data['pagination']=$this->paginationRuleWantedList();
 		    $set = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+<<<<<<< HEAD
 			  $data['list'] = substr(str_shuffle($set), 0, 4);
 				$data['crime_type']=$this->setting_model->sql($this->setting_model->getCrimeType());
 				$data['location']=$this->setting_model->sql($this->setting_model->getRegion());
@@ -55,18 +62,34 @@ class FrontController extends MY_Controller {
 			$data['year']=$this->criminal_model->sql($this->criminal_model->filterYearOfCriminalRegistered());
 		    $this->data=$data;
 		    $this->load->view('pages/top_most_wanted',$data);
+=======
+			$data['list'] = substr(str_shuffle($set), 0, 4);
+		    $this->data=$data;
+		    $this->load->view('pages/index',$data);
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 		    $this->load->view('included/footer');
 		  }
 		function crimeReport()
 		{
+<<<<<<< HEAD
 			$accuser_photo=$this->imageValidation($_FILES['accuser_photo'],"upload/accuser/");
       $date=date('m d Y H:i');
+=======
+			 $secret = '6Lc7e34UAAAAAE_DZE1z2M5XRLb1Pp29YlrPblsO';
+			 $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
+			 $responseData = json_decode($verifyResponse);
+						 
+			$date=date('m d Y H:i');
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 			$data=array(
 				'contact_name_crime'=>$this->input->post('contact_name_crime'),
 				'contact_phone_crime'=>$this->input->post('contact_phone_crime'),
 				'contact_email_crime'=>'',
 				'accuser_name'=>$this->input->post('accuser_name'),
+<<<<<<< HEAD
 				'accuser_photo'=>$accuser_photo,
+=======
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 				'crime_type'=>$this->input->post('crime_type'),
 				'city'=>$this->input->post('city'),
 				'subcity'=>$this->input->post('subcity'),
@@ -82,8 +105,15 @@ class FrontController extends MY_Controller {
 				else{
 					echo '201';
 				}
+<<<<<<< HEAD
 
 
+=======
+			// }
+			// else{
+			//   echo '201';
+			// }
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 		}
 		function saveComment()
 		{
@@ -110,8 +140,11 @@ class FrontController extends MY_Controller {
 		$this->load->view('included/header');
 		$data['criminal_posted']=$this->criminal_model->sql($this->criminal_model->viewCriminalPostedFrontSide());
 		$data['single_fugitive']=$this->criminal_model->sql($this->criminal_model->viewSingleCriminalPosted($crdoc_id));
+<<<<<<< HEAD
 		$set = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 			  $data['list'] = substr(str_shuffle($set), 0, 4);
+=======
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
      $this->data=$data;
 		 if($data['single_fugitive']){
 		$this->load->view('pages/single_view',$data);
@@ -135,10 +168,15 @@ class FrontController extends MY_Controller {
 public function getFugitive()
 {
 	$page=$_GET['page'];
+<<<<<<< HEAD
 	$by_value=$_GET['by_value'];
 	$type=$_GET['type'];
 	$ofset=($page==0?0:($page-1) * 10);
 	$fugitive=$this->criminal_model->sql($this->criminal_model->viewCriminalPosted($ofset,$by_value,$type));
+=======
+	$ofset=($page==0?0:($page-1) * 10);
+	$fugitive=$this->criminal_model->sql($this->criminal_model->viewCriminalPosted($ofset));
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 	echo json_encode($fugitive);
 }
 public function fugitiveReporter($value='')

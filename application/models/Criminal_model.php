@@ -221,6 +221,7 @@ class Criminal_model extends MY_Model {
 	 and crdoc_data->>'criminal_status'='0' order by crdoc_id desc limit 10 offset $ofset;";
 	 return $get_criminal;
   }
+<<<<<<< HEAD
 function filterYearOfCriminalRegistered(){
 	$get_year="select count(crdoc_id) as year_no,
   date_part('year',(crdoc_data->>'criminal_date')::date) as criminal_date
@@ -246,6 +247,11 @@ crdoc_data->>'criminal_status'='1'";
 	}
   $get_criminal="select crdoc_data->>'criminal_name' as criminal_name,
   st.setting_data->>'setting_crime_name' as criminal_type,
+=======
+
+  function viewCriminalPosted($ofset){
+  $get_criminal="select crdoc_data->>'criminal_name' as criminal_name,
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
   crdoc_data->>'criminal_gender' as criminal_gender,
   crdoc_id as crdoc_id,
   crdoc_data->>'criminal_birthdate' as criminal_birthdate,
@@ -257,12 +263,21 @@ crdoc_data->>'criminal_status'='1'";
   crdoc_data->>'criminal_description' as criminal_description,
   crdoc_data->>'criminal_status' as criminal_status,
   crdoc_data->>'criminal_language' as criminal_language,
+<<<<<<< HEAD
   crdoc_data->>'criminal_image' as criminal_image,
   crdoc_data->>'criminal_reward' as criminal_reward,
   crdoc_data->>'criminal_date' as criminal_date
    from criminal_document join setting as st on st.setting_id=(criminal_document.crdoc_data->>'criminal_type')::int
 	 where crdoc_data->>'type'='criminal'  and
 	 crdoc_data->>'criminal_status'='1' and (".$where.") order by crdoc_id desc limit 10 offset $ofset;";
+=======
+  crdoc_data->>'criminal_type' as criminal_type,
+  crdoc_data->>'criminal_image' as criminal_image,
+  crdoc_data->>'criminal_reward' as criminal_reward,
+  crdoc_data->>'criminal_date' as criminal_date
+   from criminal_document where crdoc_data->>'type'='criminal' and
+	 crdoc_data->>'criminal_status'='1' order by crdoc_id desc limit 10 offset $ofset;";
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 	 return $get_criminal;
   }
   function viewCriminalPostedFrontSide(){
@@ -492,6 +507,7 @@ count(1) filter(where crdoc_data->>'criminal_status'='1') as posted_count from c
 		crdoc_data->>'type'='criminal';";
 		return $count;
 	}
+<<<<<<< HEAD
 
 
   public function get_no_crimes()
@@ -519,5 +535,7 @@ count(1) filter(where crdoc_data->>'criminal_status'='1') as posted_count from c
 
     return $b->result_array();
   }
+=======
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 }
 ?>

@@ -27,6 +27,7 @@
 
 	                </div>
 	                <div class="row">
+<<<<<<< HEAD
                         <div class="col-lg-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading main-color-bg">
@@ -53,6 +54,109 @@
                     </div>
 	                        
 						
+=======
+	                        <div class="col-lg-8">
+	                            <div class="panel panel-default">
+	                                <div class="panel-heading main-color-bg">
+	                                    <h3 class="panel-title" align="center">Criminal And Suspects Reports</h3>
+	                                </div>
+	                                <section class="text-center" style="margin-top: -3%;">
+																		<div class="container" style="padding-top:30px;">
+																			<div class="section-content">
+																			  	<div class="row" style="width:47vw; overflow: auto;">
+																						<?php foreach($reporter as $key) {?>
+																				    <div class="col-sm-6 col-md-6 mb-sm-6 mb-md-6 col-lg-6">
+																				      <div class="icon-box iconbox-theme-colored bg-lighter" style="padding:0px 17px;margin-bottom:auto;">
+																				        <h5 class="icon-box-title"><?php echo ucwords($key->criminal_name);?></h5>
+																				          <img class="img-responsive img-fullwidth" src="<?php echo base_url().$key->criminal_image;?>" alt="featured project"
+																									style="padding-left:35% ;min-width: auto; min-height: auto; max-height: 100px!important; max-width: 100%;">
+
+																						        <table class="table" style="border:none;">
+																							        <tbody style="border:none;">
+																							            <tr>
+																							                <th scope="row">Reporter:</th>
+																							                <td><?php echo $key->reporter_name;?></td>
+																							             </tr>
+																							             <tr>
+																							                <th scope="row">Phone N<sup><u>o</u></sup></th>
+																							                <td><?php echo $key->reporter_phone;?></td>
+																							            </tr>
+																							            <tr style="cursor:pointer" class="read_more" data-read="<?php echo $key->detail_crime_reporter;?>">
+																							                <th>Message</th>
+																							                <td><p style="text-align: justify;" class="add_message" >
+																																<?php echo substr($key->detail_crime_reporter,0,20);?>
+																																<a style="color:green" href="javascript:;"
+																																	> More</a></p></td>
+																							            </tr>
+																													<tr>
+
+																													</tr>
+																							        </tbody>
+																							    </table>
+
+																				      </div>
+																				    </div>
+
+																				  <?php } ?>
+																				</div>
+																			</div>
+																		</div>
+																	</section>
+
+	                            </div>
+	                        </div>
+	                        <div class="col-lg-4">
+
+	                            <div class="panel panel-default">
+	                                <div class="panel-heading main-color-bg">
+	                                    <div class="row" align="right" style="display: inline-block;">
+	                                    	<div class="col-md-12">
+	                                    		<h6 class="panel-title" align="left">Recently Added Criminal And Suspects</h6>
+	                                    	</div>
+	                                    	<!-- <div class="col-md-3" align="right">
+	                                        	<button class="btn btn-success btn-sm fa fa-plus fa-2x" data-toggle="modal" data-target="#addModal"></button>
+
+	                                    	</div> -->
+	                                    </div>
+	                                </div>
+                                  <?php foreach($fugitive as $row) {?>
+	                                <div class="panel-footer">
+	                                	<div class="row">
+							        		<div class="col-md-3">
+							         		    <img class="img-fullwidth" src="<?php echo base_url().$row->criminal_image?>" alt="" style="height: 50px; width: 50px;">
+							        		</div>
+							        		<div class="col-md-9">
+									          <div class="row">
+									            <div class="col-md-12">
+									              <div class="table-responsive">
+												    <table class="table" style="border:none;">
+												        <thead>
+												            <tr>
+									             			   	<h6 class="mt-0"><?php echo $row->criminal_name;?></h6>
+												            </tr>
+												        </thead>
+												        <tbody style="border:none;">
+												            <tr>
+												                <h6><?php echo $row->criminal_type;?></h6>
+												            </tr>
+												            <tr>
+												              <h6><?php echo $row->criminal_state_ofcase;?></h6>
+												            </tr>
+												            <tr>
+												              <h6><?php $bod=date('Y',strtotime($row->criminal_birthdate));
+																			$cur_year=date('Y');
+																			echo $row->criminal_birthdate;?></h6>
+												            </tr>
+												        </tbody>
+												    </table>
+												</div>
+									          </div>
+									      </div>
+									  </div>
+									</div>
+							</div>
+						<?php } ?>
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
               </div>
           </div>
       </div>
@@ -162,6 +266,7 @@
     </div>
   </div>
 </div>
+<<<<<<< HEAD
 
 <!-- select 
 count(crdoc_data->> 'crime_type') ,
@@ -323,3 +428,5 @@ group by  city -->
 </script>
 <script>
 </script>
+=======
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3

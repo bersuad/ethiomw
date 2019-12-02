@@ -58,7 +58,11 @@
     </div>
     </div>
     <script>
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
     $('.mouseup_mousedown_confirm').on({
            mousedown: function() {
                $('#confirm_password').prop('type','text');

@@ -8,7 +8,10 @@ function __construct()
     parent::__construct();
     $this->load->database();
     $this->load->model('criminal_model');
+<<<<<<< HEAD
     $this->load->model('setting_model');
+=======
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
     $this->load->helper(array('form', 'url'));
     $this->load->library('form_validation');
     // $this->load->model('admin/order_model');
@@ -203,6 +206,7 @@ $data['comment']=$comment[0]->comment_count;
 echo json_encode($data);
   }
 
+<<<<<<< HEAD
 
 
   public function graph_data(){
@@ -220,6 +224,8 @@ echo json_encode($data);
     echo json_encode($data['crime_categoty']);
   }
 
+=======
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 }
 
 ?>

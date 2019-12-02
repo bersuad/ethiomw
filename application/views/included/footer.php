@@ -86,6 +86,7 @@
               <label for="recipient-name" class="col-form-label">Accuser Name</label>
               <input type="text" class="form-control" placeholder="Accuser Name" name="accuser_name" id="accuser_name">
               <div class="accuser_name" style="color:red"></div>
+<<<<<<< HEAD
           </div>
             <div class="col-sm-6">
               <label for="recipient-name" class="col-form-label">Crime Type</label>
@@ -179,6 +180,162 @@
             <label for="message-text" class="col-form-label">Email:</label>
             <input type="email" class="form-control" placeholder="Email" name="comment_email" id="message_email">
             <div class="response_email" style="color:red"></div>
+=======
+          </div>
+            <div class="col-sm-6">
+              <label for="recipient-name" class="col-form-label">Crime Type</label>
+              <input type="text" class="form-control" placeholder="Crime Type" name="crime_type" id="crime_type">
+              <div class="crime_type" style="color:red"></div>
+          </div>
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
+          </div>
+            <div class="row">
+            <div class="col-sm-6">
+              <label for="recipient-name" class="col-form-label">Region
+                <i style="color:red" class="icon icon_question_alt2"></i></label>
+               <select class="form-control" placeholder="City" name="city" id="city">
+                <option>Select Region Or City</option>
+                <option value="Addis Ababa">Addis Ababa(City)</option>
+                <option value="Dire Dawa">Dire Dawa(City)</option>
+                <option value="Oromia">Oromia(Region)</option>
+                <option value="Amhara">Amhara(Region)</option>
+                <option value="Benishangul-Gumuz">Benishangul-Gumuz(Region)</option>
+                <option value="Somali">Somali(Region)</option>
+                <option value="Afar">Afar(Region)</option>
+                <option value="SNNAP">SNNAP(Region)</option>
+                <option value="Gambela">Gambela(Region)</option>
+                <option value="Tigray">Tigray(Region)</option>
+                <option value="Harari">Harari(Region)</option>
+               </select>
+              <div class="city" style="color:red"></div>
+          </div>
+            <div class="col-md-6">
+              <label for="recipient-name" class="col-form-label">Location  <i style="color:red" class="icon icon_question_alt2"></i></label>
+              <input type="text" class="form-control" placeholder="Location" name="subcity" id="subcity">
+              <div class="subcity" style="color:red"></div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label" style="margin-top: 25%; margin-left: 4%;" > Code <span class="icon_refresh" aria-hidden="true" onclick="reloadPin()"></span>
+              </label>
+              <span ><strong><i id="labelCode"><?php echo $list; ?></i></span></strong>              
+            </div>
+            
+          </div>
+          <div class="col-md-9">
+            <div class="form-group">
+              <label></label>
+              <input name="code" type="text" class="form-control" placeholder="Enter the code here" id="inputedCode" onkeyup="pincode()">
+              <div class="code" style="color:red"></div>              
+            </div>
+          </div>
+          </div>
+          
+          <div class="form-group">
+<<<<<<< HEAD
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message_text" rows="5" placeholder="Message" name="comment_message"></textarea>
+            <div class="response_message" style="color:red"></div>
+
+          </div>
+      </div>
+      <div class="modal-footer">
+     <button type="submit" class="btn btn-border" onclick="saveComment()">Send message<span class="checkAsFinishClicked"></span></button>
+=======
+            <label for="message-text" class="col-form-label">Detail Crime Report:</label>
+            <textarea class="form-control" id="crime_message" rows="5" placeholder="Message" name="report_crime"></textarea>
+            <div class="crime_message" style="color:red"></div>
+          </div>
+      </div>
+      <div class="modal-footer">
+
+        <button type="submit" class="btn btn-border" onclick="crimeReport()">Report <span class="click_report"></span></button>
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="Agreement" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+<<<<<<< HEAD
+        <h5 class="modal-title" id="ModalLabel"><b>Warning</b> <i class="icon  icon_error-circle_alt"></i>
+        <button type="button" class="close close_agreament_modal" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button></h5>
+      </div>
+
+      <div class="modal-body">
+
+
+        I understand that repeatedly providing tips with no investigative value will result in my tips not
+        being considered.
+       I understand that providing false information could subject me to fine, imprisonment.
+
+      </div>
+      <div class="modal-footer">
+     <button type="button" class="btn btn-border" onclick="agree()">Agree</button>
+     <button type="button" class="btn btn-border" onclick="disagree()">Disagree</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="view_image_modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close close_comment" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+      <img class="view_image" >
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="success_response_modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title alert alert-success" id="ModalLabel" ><span id="response_text"></span>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+=======
+        <h5 class="modal-title" id="ModalLabel">Your Comment</h5>
+        <button type="button" class="close close_comment" data-dismiss="modal" aria-label="Close">
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
+          <span aria-hidden="true">&times;</span>
+        </button></h5>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="modal fade" id="addCategory" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">Your Comment</h5>
+        <button type="button" class="close close_comment" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!--  action="<?php echo base_url('criminal/saveComment');?>" -->
+      <form role="form" method="post" id="uploadForm">
+      <div class="modal-body">
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Email:</label>
+            <input type="email" class="form-control" placeholder="Email" name="comment_email" id="message_email">
+            <div class="response_email" style="color:red"></div>
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Message:</label>
@@ -189,12 +346,15 @@
       </div>
       <div class="modal-footer">
      <button type="submit" class="btn btn-border" onclick="saveComment()">Send message<span class="checkAsFinishClicked"></span></button>
+<<<<<<< HEAD
+      </div>
+    </form>
+=======
       </div>
     </form>
     </div>
   </div>
 </div>
-
 <div class="modal fade" id="Agreement" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -248,39 +408,7 @@
         </button></h5>
       </div>
 
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="modal fade" id="addCategory" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="ModalLabel">Your Comment</h5>
-        <button type="button" class="close close_comment" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <!--  action="<?php echo base_url('criminal/saveComment');?>" -->
-      <form role="form" method="post" id="uploadForm">
-      <div class="modal-body">
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Email:</label>
-            <input type="email" class="form-control" placeholder="Email" name="comment_email" id="message_email">
-            <div class="response_email" style="color:red"></div>
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message_text" rows="5" placeholder="Message" name="comment_message"></textarea>
-            <div class="response_message" style="color:red"></div>
-
-          </div>
-      </div>
-      <div class="modal-footer">
-     <button type="submit" class="btn btn-border" onclick="saveComment()">Send message<span class="checkAsFinishClicked"></span></button>
-      </div>
-    </form>
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
     </div>
   </div>
 </div>
@@ -298,6 +426,7 @@
 <script type="text/javascript" src="<?php echo site_url()?>assets/js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
 
 <script type="text/javascript">
+<<<<<<< HEAD
 function addUserImage(fileInput) {
 var files = fileInput.files;
 
@@ -350,6 +479,8 @@ function filterDataByName(){
   }
 
 }
+=======
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
     function reloadPin()
     {
       $(':input[type="submit"]').prop('disabled', true);
@@ -357,7 +488,11 @@ function filterDataByName(){
             type: 'post',
             url: '<?php echo site_url()?>/FrontController/generate_pin',
             data:{
+<<<<<<< HEAD
 
+=======
+                                    
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
             },
             success: function(data){
               $('#labelCode').html(data);
@@ -391,7 +526,11 @@ function filterDataByName(){
         buttonsStyling: true
       })
       SwalWithBootstrapButtons.fire({
+<<<<<<< HEAD
         title: '<strong> Warning <i class="icon icon_error-oct_alt"></i> </strong>',
+=======
+        title: '<strong> Do you want to report </strong>',
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
         showClass: {
           popup: 'animated fadeInDown faster'
         },
@@ -399,10 +538,17 @@ function filterDataByName(){
           popup: 'animated fadeOutUp faster'
         },
         text: 'Do you agree with our terms and conditions ?',
+<<<<<<< HEAD
         html: '<br> <small> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</small>',
         showCancelButton: true,
         confirmButtonText: 'Agree',
         cancelButtonText: 'Disagree',
+=======
+        html: '<br> <small> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</small>',        
+        showCancelButton: true,
+        confirmButtonText: 'Yes',
+        cancelButtonText: 'No',
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
         showLoaderOnConfirm: true,
         preConfirm: (login) => {
           return fetch(``)
@@ -412,7 +558,11 @@ function filterDataByName(){
               } else {
                 swal("Cancelled", $('.close_agreament_modal').click());
               }
+<<<<<<< HEAD
 
+=======
+              
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
               return response.json()
             })
             .catch(error => {
@@ -423,9 +573,15 @@ function filterDataByName(){
         },
         allowOutsideClick: () => !Swal.isLoading()
       })
+<<<<<<< HEAD
 
     }
 
+=======
+      
+    }
+  
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 </script>
 
 <script>
@@ -732,10 +888,15 @@ function response(response){
 </script>
 <script>
 $(function(){
+<<<<<<< HEAD
 loadFugitive(0,'all','all');
 topMostWanted(0,'all','all');
 })
 
+=======
+loadFugitive(0);
+})
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 function addLoadingAnimation() {
   var load="";
   load+='<div class="preloader-dot-loading">';
@@ -753,7 +914,11 @@ function addLoadingAnimation() {
     load+='</div>';
     return load;
   }
+<<<<<<< HEAD
 function loadFugitive(ofset,by_value,type)
+=======
+function loadFugitive(ofset)
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 {
   if(ofset!=0){
     var take_pagination_id=$('#take_id_pagination').val();
@@ -767,12 +932,21 @@ function loadFugitive(ofset,by_value,type)
   var result="";
 $.ajax({
   type:'POST',
+<<<<<<< HEAD
   url:'<?php echo base_url('frontController/getFugitive?page=');?>'+ofset+"&by_value="+by_value+"&type="+type,
   success:function(data)
   {
     var othe_result_list='';
     data=JSON.parse(data);
     if(data.length){
+=======
+  url:'<?php echo base_url('frontController/getFugitive?page=');?>'+ofset,
+  success:function(data)
+  {
+    var othe_result_list='';
+    if(data){
+data=JSON.parse(data);
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 for(var take in data){
 result+='<div class="col-xs-12 col-sm-6 col-md-3 mb-30">';
    result+='<div class="box-hover-effect effect2 bg-lightest-gray wow fadeInUp maxwidth400 p-10" data-wow-duration="1.5s" data-wow-offset="10" style="box-shadow: 0 5px 35px -16px #888888; height: 340px;">';
@@ -806,6 +980,7 @@ i++;
 $('#loading').html('');
 }
 else{
+<<<<<<< HEAD
   $('#loading').html('');
   $('#load_fugitive').html('');
 }
@@ -883,6 +1058,9 @@ else{
   $('#loading').html('');
   $('#load_fugitive').html('');
 
+=======
+  $('#loading').html(displayNoData());
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 }
 $('.open_image').click(function(){
   $('.view_image').attr('src','<?php echo base_url();?>'+$(this).data('image'));
@@ -898,6 +1076,7 @@ else{
 }
 
 </script>
+<<<<<<< HEAD
 
 <script>
 var ctx = document.getElementById('myChart').getContext('2d');
@@ -938,6 +1117,8 @@ var myChart = new Chart(ctx, {
     }
 });
 </script>
+=======
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 
 </body>
 </html>

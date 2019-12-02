@@ -16,6 +16,7 @@
             <div class="col-lg-3">
               <div class="form-group">
                 <span>Filter By</span>
+<<<<<<< HEAD
                 <select class="form-control" onchange="filterByCrimeType(this.value,'crime')" id="filter_by_crime">
                   <option value="">--Crime Category--</option>
                   <?php foreach($crime_type as $row) {?>
@@ -23,11 +24,21 @@
                 <?php } ?>
                 </select>
               </div>
+=======
+                <select class="form-control">
+                  <option value="empty">-- Category --</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                </select>
+              </div>              
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
             </div>
 
             <div class="col-lg-3">
               <div class="form-group">
                 <span>Filter By</span>
+<<<<<<< HEAD
                 <select class="form-control" onchange="filterByCrimeType(this.value,'year')" id="filter_by_year">
                   <option value="">-- Year --</option>
                  <?php foreach($year as $row) {?>
@@ -51,6 +62,28 @@
                 </div>
               </div>
 
+=======
+                <select class="form-control">
+                  <option value="empty">-- Year --</option>
+                  <option>2019</option>
+                  <option>2018</option>
+                  <option>2017</option>
+                </select>
+              </div>
+              </div> 
+              <div class="col-lg-3" style="border-left: 2px solid #eee;">
+                <div class="form-group">
+                  <span>Search By</span>
+                  <input type="text" name="" class="form-control" placeholder="Criminal Name">
+                </div>              
+              </div>
+              <div class="col-lg-3">
+              <div class="form-group">
+                <span> </span>
+                <button type="submit" class="btn btn-border form-control" style="margin-top: 8.5%;">Serach</button>
+              </div>              
+            </div>
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
           </div>
         </div>
       </div>
@@ -71,9 +104,15 @@
       </li>
       <?php for($i=1;$i<=$pagination['posted_count'];$i++) {?>
       <?php if($i==1) {?>
+<<<<<<< HEAD
       <li ><a style="background-color:#bf9e58;" id="<?php echo $i;?>" href="javascript:;" onclick="loadFugitive(<?php echo $i;?>,'all','all')"><?php echo $i;?></a></li>
       <?php } else {?>
       <li><a href="javascript:;" id="<?php echo $i;?>" onclick="loadFugitive(<?php echo $i;?>,'all','all')"><?php echo $i;?></a></li>
+=======
+      <li ><a style="background-color:#bf9e58;" id="<?php echo $i;?>" href="javascript:;" onclick="loadFugitive(<?php echo $i;?>)"><?php echo $i;?></a></li>
+      <?php } else {?>
+      <li><a href="javascript:;" id="<?php echo $i;?>" onclick="loadFugitive(<?php echo $i;?>)"><?php echo $i;?></a></li>
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
       <?php } } ?>
       <li>
         <a href="#" aria-label="Next">
@@ -88,7 +127,10 @@
 
   </div>
 </section>
+<<<<<<< HEAD
 <script>
 
 
 </script>
+=======
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3

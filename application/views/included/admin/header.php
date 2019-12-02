@@ -68,10 +68,30 @@
                                   </a>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-top: 10%;">
                                     <div style="overflow-y: scroll;height:318px" id="alert_text">
+<<<<<<< HEAD
                                   
 
                                   </div>
 
+=======
+                                    <div class="container content" style="max-width: 230px; color: #444;">
+                                        <div class="blog">
+                                            <div class="blog-pargraph">
+                                                <h6><i class="fa fa-user fa-sm"></i> <label style="color: #000;">Abebe</label></h6>
+                                                <h6><i class="fa fa-envelope fa-sm"></i> <label style="color: #000;"> mrx@gmail.com</label></h6>
+                                                <h6><i class="fa fa-phone fa-sm"></i> <label style="color: #000;">+251911111111</label></h6>
+                                                <label style="color: #000;">Message:</label>
+                                                <p> It is a long established fact that readable when looking at its layout...
+                                                  <a style="color:green" href="javascript:;"> More</a></p>
+                                            </div>
+                                            <hr>
+
+                                      </div>
+                                  </div>
+
+                                  </div>
+                                  
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 
                                 </li>
                                 <!-- <li class="m-0 pl-10 pr-10"><a href="#"> New Crime Report <sup><small class="badge" style="background-color: #d60808; color: #fff;">4</small></sup></a></li> -->
@@ -122,6 +142,7 @@
                       <span  id="comment_count"></span></a>
                     <a href="<?php echo base_url('account_user')?>"
                       class="<?=(current_url()==base_url('account_user')) ? 'list-group-item active':'list-group-item'?>">
+<<<<<<< HEAD
                       <span class="fa fa-users"></span> User Account
                     </a>
                     <div class=" dropdown">
@@ -143,6 +164,9 @@
                     </div>
                     
                     
+=======
+                      <span class="fa fa-cogs"></span> User Account</a>
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
                   </div>
                 </div>
               </div>

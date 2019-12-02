@@ -7,7 +7,10 @@ class Pages extends MY_Controller {
 	    parent::__construct();
 	    $this->load->database();
 	    $this->load->model('criminal_model');
+<<<<<<< HEAD
 			$this->load->model('setting_model');
+=======
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 	    $this->load->helper(array('form', 'url'));
 	    $this->load->library('form_validation');
 			$this->load->library('session');
@@ -73,7 +76,11 @@ else{
 		$data['fugitive']=$this->criminal_model->sql($this->criminal_model->viewFugitiveAddedDashboard());
 		$ofset=0;
 		$data['reporter']=$this->viewFugitiveReportDashboard($ofset);
+<<<<<<< HEAD
 		// print_r($data['criminal_count']);die();
+=======
+		// print_r($data['reporter']);die();
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 		$this->data=$data;
 		$this->load->view('included/admin/header.php');
 		$this->load->view('pages/admin/admin',$data);
@@ -169,6 +176,7 @@ else{
 		$this->load->view('included/admin/header.php');
 		$this->load->view('pages/admin/add_new_wanted');
 		$this->load->view('included/admin/footer.php');
+<<<<<<< HEAD
 	}
 public function all_reported()
 	{
@@ -211,6 +219,29 @@ public function all_reported()
 		$this->load->view('included/admin/footer.php');
 	}
 
+=======
+	}
+public function all_reported()
+	{
+		$this->load->view('included/admin/header.php');
+		$page=$_GET['page'];
+		$ofset=($page==0?0:($page-1) * 4);
+		$data['reporter']=$this->viewFugitiveReportDashboard($ofset);
+		$data['pagination_page']=$this->paginationRuleReporter();
+    $this->data=$data;
+		$this->load->view('pages/admin/all_report',$data);
+		$this->load->view('included/admin/footer.php');
+	}
+ public function account_user()
+	{
+		$this->load->view('included/admin/header.php');
+		$data['suspend_user']=$this->criminal_model->sql($this->criminal_model->viewSuspendUser());
+		$data['active_user']=$this->criminal_model->sql($this->criminal_model->viewActiveUser());
+		$this->data=$data;
+		$this->load->view('pages/admin/setting',$data);
+		$this->load->view('included/admin/footer.php');
+	}
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 function getSomeCrimeReport(){
 	$ofset=$_GET['ofset'];
 	$ofset=($ofset-1) * 4;
@@ -256,6 +287,7 @@ public function comment()
 		$this->data=$data;
 		$this->load->view('pages/admin/comment',$data);
 		$this->load->view('included/admin/footer.php');
+<<<<<<< HEAD
 	}
 	else{
 		redirect('pages/error');
@@ -268,5 +300,12 @@ public function comment()
 		$data=$this->criminal_model->get_no_crimes();
 		print_r($data);
 		return true;
+=======
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
 	}
+	else{
+		redirect('pages/error');
+
+	}
+}
 }

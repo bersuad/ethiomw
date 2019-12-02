@@ -140,7 +140,11 @@
             <div class="widget no-border m-0">
               <ul class="list-inline pull-right sm-pull-none sm-text-center mt-5">
                 <li class="m-0 pl-10 pr-10">
+<<<<<<< HEAD
                   <a href="<?php echo base_url('top_most_wanted');?>">
+=======
+                  <a href="#">
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
                     <i class="fa fa-key"> Top most wanted list</i>
                   </a>
                 </li>
