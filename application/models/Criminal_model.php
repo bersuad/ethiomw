@@ -150,6 +150,7 @@ class Criminal_model extends MY_Model {
 	 return $get_user;
 	}
 	function viewSuspendUser(){
+ 
 	$get_user="select case when(crdoc_data->>'admin_name' is not null) then crdoc_data->>'admin_name' else null end as admin_name,
 	case when(crdoc_data->>'admin_phone' is not null) then crdoc_data->>'admin_phone' else null end   as admin_phone,
 	case when(crdoc_data->>'admin_email' is not null) then crdoc_data->>'admin_email' else null end as admin_email,
@@ -173,8 +174,31 @@ class Criminal_model extends MY_Model {
 	case when(crdoc_data->>'admin_status' is not null) then crdoc_data->>'admin_status' else null end as admin_status
 	 from criminal_document where case when (crdoc_data->>'type' is not null) then crdoc_data->>'type' else null end='admin' and
 	  case when(crdoc_data->>'admin_status' is not null) then crdoc_data->>'admin_status' else null end='1';";
+
+	// $get_user="select crdoc_data->>'admin_name' as admin_name,
+	// crdoc_data->>'admin_phone' as admin_phone,
+	// crdoc_data->>'admin_email' as admin_email,
+	// crdoc_data->>'admin_image' as admin_image,
+	// crdoc_data->>'created_date' as created_date,
+	// crdoc_data->>'admin_password' as admin_password,
+	// crdoc_id as crdoc_id,
+	// crdoc_data->>'admin_status' as admin_status
+	//  from criminal_document where crdoc_data->>'type'='admin' and crdoc_data->>'admin_status'='0';";
 	 return $get_user;
 	}
+	// function viewActiveUser(){
+	// $get_user="select crdoc_data->>'admin_name' as admin_name,
+	// crdoc_data->>'admin_phone' as admin_phone,
+	// crdoc_data->>'admin_email' as admin_email,
+	// crdoc_data->>'admin_image' as admin_image,
+	// crdoc_data->>'created_date' as created_date,
+	// crdoc_data->>'admin_password' as admin_password,
+	// crdoc_id as crdoc_id,
+	// crdoc_data->>'admin_status' as admin_status
+	//  from criminal_document where crdoc_data->>'type'='admin' and crdoc_data->>'admin_status'='1';";
+ 
+	//  return $get_user;
+	// }
 
 
   function updateCriminal($values,$image_check){
@@ -202,6 +226,7 @@ class Criminal_model extends MY_Model {
 	return $update;
   }
 
+ 
   function viewCriminalArrested($ofset,$suspects_id){
 		if($suspects_id){
 			$where="where case when(crdoc_data->>'type'='criminal' is not null) then crdoc_data->>'type'='criminal' else null end   and
@@ -240,41 +265,70 @@ function filterYearOfCriminalRegistered(){
     case when(crdoc_data->>'criminal_status' is not null) then crdoc_data->>'criminal_status' else null end='1' group by criminal_date order by criminal_date desc;";
 	 return $get_year;
 }
-  function viewCriminalPosted($ofset,$by_value,$type,$suspects_id){
-		if(!$suspects_id){
-		if($type=='crime'){
-			if($by_value=='all'){
-				$where="case when(crdoc_data->>'type'='criminal' is not null) then crdoc_data->>'type'='criminal' else null end  and
-				case when(crdoc_data->>'criminal_status' is not null) then crdoc_data->>'criminal_status' else null end ='1'";
-			}
-			else{
-			$where="case when(crdoc_data->>'criminal_type' is not null) then crdoc_data->>'criminal_type' else null end ='$by_value'";
-	}}
-	else if($type=='year'){
-		if($by_value=='all'){
-			$where="case when(crdoc_data->>'type'='criminal' is not null) then crdoc_data->>'type'='criminal' else null end  and
-			case when(crdoc_data->>'criminal_status' is not null) then crdoc_data->>'criminal_status' else null end ='1'";
-		}
-		else{
-			$where="date_part('year',case when((crdoc_data->>'criminal_date')::date is not null) then
-			(crdoc_data->>'criminal_date')::date else null end)='$by_value'";
-		}
+ //  function viewCriminalPosted($ofset,$by_value,$type,$suspects_id){
+	// 	if(!$suspects_id){
+	// 	if($type=='crime'){
+	// 		if($by_value=='all'){
+	// 			$where="case when(crdoc_data->>'type'='criminal' is not null) then crdoc_data->>'type'='criminal' else null end  and
+	// 			case when(crdoc_data->>'criminal_status' is not null) then crdoc_data->>'criminal_status' else null end ='1'";
+	// 		}
+	// 		else{
+	// 		$where="case when(crdoc_data->>'criminal_type' is not null) then crdoc_data->>'criminal_type' else null end ='$by_value'";
+	// }}
+	// else if($type=='year'){
+	// 	if($by_value=='all'){
+	// 		$where="case when(crdoc_data->>'type'='criminal' is not null) then crdoc_data->>'type'='criminal' else null end  and
+	// 		case when(crdoc_data->>'criminal_status' is not null) then crdoc_data->>'criminal_status' else null end ='1'";
+	// 	}
+	// 	else{
+	// 		$where="date_part('year',case when((crdoc_data->>'criminal_date')::date is not null) then
+	// 		(crdoc_data->>'criminal_date')::date else null end)='$by_value'";
+	// 	}
 
 
-	}
-	else if($type=='name'){
-		$by_value=strtolower($by_value);
-		$where="case when(lower(crdoc_data->>'criminal_name') is not null) then
-		lower(crdoc_data->>'criminal_name') else null end  like '%$by_value%'";
+  
+ 
+// function filterYearOfCriminalRegistered(){
+// 	$get_year="select count(crdoc_id) as year_no,
+//   date_part('year',(crdoc_data->>'criminal_date')::date) as criminal_date
+//    from criminal_document where crdoc_data->>'type'='criminal' and crdoc_data->>'criminal_status'='1' group by criminal_date order by criminal_date desc;";
+// 	 return $get_year;
+// }
+function viewCriminalPosted($ofset,$by_value,$type,$suspects_id){
+    if(!$suspects_id){
+    if($type=='crime'){
+      if($by_value=='all'){
+        $where="case when(crdoc_data->>'type'='criminal' is not null) then crdoc_data->>'type'='criminal' else null end  and
+        case when(crdoc_data->>'criminal_status' is not null) then crdoc_data->>'criminal_status' else null end ='1'";
+      }
+      else{
+      $where="case when(crdoc_data->>'criminal_type' is not null) then crdoc_data->>'criminal_type' else null end ='$by_value'";
+  }}
+  else if($type=='year'){
+    if($by_value=='all'){
+      $where="case when(crdoc_data->>'type'='criminal' is not null) then crdoc_data->>'type'='criminal' else null end  and
+      case when(crdoc_data->>'criminal_status' is not null) then crdoc_data->>'criminal_status' else null end ='1'";
+    }
+    else{
+      $where="date_part('year',case when((crdoc_data->>'criminal_date')::date is not null) then
+      (crdoc_data->>'criminal_date')::date else null end)='$by_value'";
+    }
 
-	}
-	else{
+
+  }
+  else if($type=='name'){
+    $by_value=strtolower($by_value);
+    $where="case when(lower(crdoc_data->>'criminal_name') is not null) then
+    lower(crdoc_data->>'criminal_name') else null end  like '%$by_value%'";
+
+  }
+  else{
 $where="case when(crdoc_data->>'type'='criminal' is not null) then crdoc_data->>'type'='criminal' else null end  and
 case when(crdoc_data->>'criminal_status' is not null) then crdoc_data->>'criminal_status' else null end ='1'";
-	}
+  }
 }
 else{
-	$where="crdoc_id=$suspects_id";
+  $where="crdoc_id=$suspects_id";
 }
   $get_criminal="select case when(crdoc_data->>'criminal_name' is not null) then crdoc_data->>'criminal_name' else null end as criminal_name,
   case when(st.setting_data->>'setting_crime_name' is not null) then st.setting_data->>'setting_crime_name' else null end as criminal_type,
@@ -294,9 +348,9 @@ else{
   case when(crdoc_data->>'criminal_date' is not null) then crdoc_data->>'criminal_date' else null end as criminal_date
    from criminal_document join setting as st on
    st.setting_id=case when((criminal_document.crdoc_data->>'criminal_type')::int is not null) then (criminal_document.crdoc_data->>'criminal_type')::int else null end
-	 where case when(crdoc_data->>'type'='criminal' is not null) then crdoc_data->>'type'='criminal' else null end   and
-	 case when(crdoc_data->>'criminal_status' is not null) then crdoc_data->>'criminal_status' else null end ='1' and (".$where.") order by crdoc_id desc limit 12 offset $ofset;";
-	 return $get_criminal;
+   where case when(crdoc_data->>'type'='criminal' is not null) then crdoc_data->>'type'='criminal' else null end   and
+   case when(crdoc_data->>'criminal_status' is not null) then crdoc_data->>'criminal_status' else null end ='1' and (".$where.") order by crdoc_id desc limit 10 offset $ofset;";
+   return $get_criminal;
   }
   function viewCriminalPostedFrontSide(){
   $get_criminal="select case when(crdoc_data->>'criminal_name' is not null) then crdoc_data->>'criminal_name' else null end as criminal_name,
@@ -340,15 +394,21 @@ else{
   case when(crdoc_data->>'criminal_date' is not null) then crdoc_data->>'criminal_date' else null end as criminal_date
    from criminal_document join setting as st on
    st.setting_id=case when((criminal_document.crdoc_data->>'criminal_type')::int is not null) then (criminal_document.crdoc_data->>'criminal_type')::int else null end
-	 where case when(crdoc_data->>'type'='criminal' is not null) then crdoc_data->>'type'='criminal' else null end   and
-	 case when(crdoc_data->>'criminal_status' is not null) then crdoc_data->>'criminal_status' else null end ='1' and
-	 crdoc_id=$crdoc_id order by crdoc_id desc;";
-	 return $get_criminal;
-  }
+   where case when(crdoc_data->>'type'='criminal' is not null) then crdoc_data->>'type'='criminal' else null end   and
+   case when(crdoc_data->>'criminal_status' is not null) then crdoc_data->>'criminal_status' else null end ='1' and
+   crdoc_id=$crdoc_id order by crdoc_id desc;";
+   return $get_criminal;
+ }
+
+
+ 
+
+
 	function changeStatusCriminal($crdoc_id)
 	{
-		$get_criminal="select case when(crdoc_data->>'criminal_name' is not null) then crdoc_data->>'criminal_name' else null end as criminal_name,
-  case when(crdoc_data->>'criminal_type' is not null) then crdoc_data->>'criminal_type' else null end as criminal_type,
+ 
+		  $get_criminal="select case when(crdoc_data->>'criminal_name' is not null) then crdoc_data->>'criminal_name' else null end as criminal_name,
+  case when(st.setting_data->>'setting_crime_name' is not null) then st.setting_data->>'setting_crime_name' else null end as criminal_type,
   case when(crdoc_data->>'criminal_gender' is not null) then crdoc_data->>'criminal_gender' else null end as criminal_gender,
   crdoc_id as crdoc_id,
   case when(crdoc_data->>'criminal_birthdate' is not null) then crdoc_data->>'criminal_birthdate' else null end as criminal_birthdate,
@@ -366,55 +426,51 @@ else{
    from criminal_document join setting as st on
    st.setting_id=case when((criminal_document.crdoc_data->>'criminal_type')::int is not null) then (criminal_document.crdoc_data->>'criminal_type')::int else null end
    where case when(crdoc_data->>'type'='criminal' is not null) then crdoc_data->>'type'='criminal' else null end and
-		 crdoc_id=$crdoc_id order by crdoc_id desc;";
+     crdoc_id=$crdoc_id order by crdoc_id desc;";
 return $get_criminal;
 
 	}
-	function viewFugitiveReportDashboard($ofset,$suspects_id){
-		if($suspects_id){
-		$where="where case when(crdoc_data->>'type' is not null) then crdoc_data->>'type'
-		else null end='report' and
-		case when(crdoc_data->>'status' is not null) then crdoc_data->>'status' else null end='0' and
-		case when(crdoc_data->>'fugitive_id' is not null) then crdoc_data->>'fugitive_id'
-		 else null end='$suspects_id'";
-		}
-		else{
-			$where="where case when(crdoc_data->>'type' is not null) then crdoc_data->>'type'
-			else null end='report' and
-			case when(crdoc_data->>'status' is not null) then crdoc_data->>'status' else null end='0'
-			 order by crdoc_id desc limit 10 offset $ofset";
-		}
-	$get_user="select crdoc_data->>'fugitive_id' as fugitive_id,
-	crdoc_data->>'reporter_name' as reporter_name,
-	crdoc_data->>'reporter_email' as reporter_email,
-	crdoc_data->>'reporter_phone' as reporter_phone,
-	crdoc_data->>'detail_crime_reporter' as detail_crime_reporter,
-	crdoc_data->>'reported_date' as reported_date,
-	crdoc_data->>'status' as status
-	from criminal_document ".$where.";";
-	 return $get_user;
-	}
-	function viewFugitiveAddedDashboard(){
-	$get_user="select crdoc_data->>'criminal_name' as criminal_name,
-  crdoc_data->>'criminal_gender' as criminal_gender,
-  crdoc_id as crdoc_id,
-  crdoc_data->>'criminal_birthdate' as criminal_birthdate,
-  crdoc_data->>'criminal_eye_color' as criminal_eye_color,
-  crdoc_data->>'criminal_height' as criminal_height,
-  crdoc_data->>'criminal_nationality' as criminal_nationality,
-  crdoc_data->>'criminal_state_ofcase' as criminal_state_ofcase,
-  crdoc_data->>'criminal_identifier' as criminal_identifier,
-  crdoc_data->>'criminal_description' as criminal_description,
-  crdoc_data->>'criminal_status' as criminal_status,
-  crdoc_data->>'criminal_language' as criminal_language,
-  crdoc_data->>'criminal_type' as criminal_type,
-  crdoc_data->>'criminal_image' as criminal_image,
-  crdoc_data->>'criminal_reward' as criminal_reward,
-  crdoc_data->>'criminal_date' as criminal_date
-   from criminal_document where crdoc_data->>'type'='criminal' and
-	 crdoc_data->>'criminal_status'='1' order by crdoc_id asc limit 4;";
-	 return $get_user;
-	}
+ 
+// 	function viewFugitiveReportDashboard($ofset,$suspects_id){
+// 		if($suspects_id){
+// 		$where="where case when(crdoc_data->>'type' is not null) then crdoc_data->>'type'
+// 		else null end='report' and
+// 		case when(crdoc_data->>'status' is not null) then crdoc_data->>'status' else null end='0' and
+// 		case when(crdoc_data->>'fugitive_id' is not null) then crdoc_data->>'fugitive_id'
+// 		 else null end='$suspects_id'";
+// 		}
+// 		else{
+// 			$where="where case when(crdoc_data->>'type' is not null) then crdoc_data->>'type'
+// 			else null end='report' and
+// 			case when(crdoc_data->>'status' is not null) then crdoc_data->>'status' else null end='0'
+// 			 order by crdoc_id desc limit 10 offset $ofset";
+// 		}
+// }
+  function viewFugitiveReportDashboard($ofset,$suspects_id){
+    if($suspects_id){
+    $where="where case when(crdoc_data->>'type' is not null) then crdoc_data->>'type'
+    else null end='report' and
+    case when(crdoc_data->>'status' is not null) then crdoc_data->>'status' else null end='0' and
+    case when(crdoc_data->>'fugitive_id' is not null) then crdoc_data->>'fugitive_id'
+     else null end='$suspects_id'";
+    }
+    else{
+      $where="where case when(crdoc_data->>'type' is not null) then crdoc_data->>'type'
+      else null end='report' and
+      case when(crdoc_data->>'status' is not null) then crdoc_data->>'status' else null end='0'
+       order by crdoc_id desc limit 10 offset $ofset";
+    }
+  $get_user="select crdoc_data->>'fugitive_id' as fugitive_id,
+  crdoc_data->>'reporter_name' as reporter_name,
+  crdoc_data->>'reporter_email' as reporter_email,
+  crdoc_data->>'reporter_phone' as reporter_phone,
+  crdoc_data->>'detail_crime_reporter' as detail_crime_reporter,
+  crdoc_data->>'reported_date' as reported_date,
+  crdoc_data->>'status' as status
+  from criminal_document ".$where.";";
+   return $get_user;
+  }
+ 
 	function viewNewCrimeReport($start_date,$end_date,$crime_type){
 		if($crime_type=='all' or !$crime_type){
 			$where="case when(crdoc_data->>'report_date' is not null) then crdoc_data->>'report_date' else null end  >='$start_date' and
@@ -478,21 +534,37 @@ function viewNewCrimeReportAlert($ofset){
 		 order by case when(crdoc_data->>'status' is not null) then crdoc_data->>'status' else null end, crdoc_id desc limit 10 offset $ofset;";
 		 return $get_crime;
 	}
+	// function fetchNewcrime($crdoc_id){
+	// 	$get_crime="select case when(crdoc_data->>'report_crime' is not null) then crdoc_data->>'report_crime' else null end as report_crime,
+	//   case when(crdoc_data->>'contact_name_crime' is not null) then crdoc_data->>'contact_name_crime' else null end as contact_name_crime,
+	//   case when(crdoc_data->>'contact_email_crime' is not null) then crdoc_data->>'contact_email_crime' else null end as contact_email_crime,
+	//   case when(crdoc_data->>'contact_phone_crime' is not null) then crdoc_data->>'contact_phone_crime' else null end as contact_phone_crime,
+	//   case when(crdoc_data->>'accuser_name' is not null) then crdoc_data->>'accuser_name' else null end as accuser_name,
+	// 	case when(crdoc_data->>'accuser_photo' is not null) then crdoc_data->>'accuser_photo' else null end as accuser_photo,
+	//   case when(crdoc_data->>'crime_type' is not null) then crdoc_data->>'crime_type' else null end as crime_type,
+	//   case when(crdoc_data->>'city' is not null) then crdoc_data->>'city' else null end as city,
+	//   case when(crdoc_data->>'subcity' is not null) then crdoc_data->>'subcity' else null end as subcity,
+ //          case when(crdoc_data->>'status' is not null) then crdoc_data->>'status' else null end as status,
+	//  crdoc_id as crdoc_id,
+	//   case when(crdoc_data->>'report_date' is not null) then crdoc_data->>'report_date' else null end as report_date
+	//    from criminal_document
+	//     where case when(crdoc_data->>'type' is not null) then crdoc_data->>'type' else null end ='crime' and crdoc_id=$crdoc_id;";
+
+
 	function fetchNewcrime($crdoc_id){
-		$get_crime="select case when(crdoc_data->>'report_crime' is not null) then crdoc_data->>'report_crime' else null end as report_crime,
-	  case when(crdoc_data->>'contact_name_crime' is not null) then crdoc_data->>'contact_name_crime' else null end as contact_name_crime,
-	  case when(crdoc_data->>'contact_email_crime' is not null) then crdoc_data->>'contact_email_crime' else null end as contact_email_crime,
-	  case when(crdoc_data->>'contact_phone_crime' is not null) then crdoc_data->>'contact_phone_crime' else null end as contact_phone_crime,
-	  case when(crdoc_data->>'accuser_name' is not null) then crdoc_data->>'accuser_name' else null end as accuser_name,
-		case when(crdoc_data->>'accuser_photo' is not null) then crdoc_data->>'accuser_photo' else null end as accuser_photo,
-	  case when(crdoc_data->>'crime_type' is not null) then crdoc_data->>'crime_type' else null end as crime_type,
-	  case when(crdoc_data->>'city' is not null) then crdoc_data->>'city' else null end as city,
-	  case when(crdoc_data->>'subcity' is not null) then crdoc_data->>'subcity' else null end as subcity,
-          case when(crdoc_data->>'status' is not null) then crdoc_data->>'status' else null end as status,
-	 crdoc_id as crdoc_id,
-	  case when(crdoc_data->>'report_date' is not null) then crdoc_data->>'report_date' else null end as report_date
-	   from criminal_document
-	    where case when(crdoc_data->>'type' is not null) then crdoc_data->>'type' else null end ='crime' and crdoc_id=$crdoc_id;";
+		$get_crime="select crdoc_data->>'report_crime' as report_crime,
+	  crdoc_data->>'contact_name_crime' as contact_name_crime,
+	  crdoc_data->>'contact_phone_crime' as contact_phone_crime,
+	  crdoc_data->>'accuser_name' as accuser_name,
+	  crdoc_data->>'crime_type' as crime_type,
+	  crdoc_data->>'city' as city,
+	  crdoc_data->>'subcity' as subcity,
+		crdoc_data->>'status' as status,
+		crdoc_data->>'contact_email_crime' as contact_email_crime,
+		crdoc_id as crdoc_id,
+	  crdoc_data->>'report_date' as report_date
+	   from criminal_document where crdoc_data->>'type'='crime' and crdoc_id=$crdoc_id";
+ 
 		 return $get_crime;
 	}
 	function changeStatusCrime($values,$crdoc_id)
@@ -515,6 +587,7 @@ function viewNewCrimeReportAlert($ofset){
 		return $updt;
 	}
 	function fetchNewComment($crdoc_id){
+ 
 		$get_crime="select  case when(crdoc_data->>'comment_email' is not null) then crdoc_data->>'comment_email' else null end as comment_email,
 	  case when(crdoc_data->>'comment_message' is not null) then crdoc_data->>'comment_message' else null end as comment_message,
 	  case when(crdoc_data->>'comment_date' is not null) then crdoc_data->>'comment_date' else null end as comment_date,
@@ -522,6 +595,14 @@ function viewNewCrimeReportAlert($ofset){
 	  case when(crdoc_data->>'type' is not null) then crdoc_data->>'type' else null end  as type
 	   from criminal_document
 	   where case when(crdoc_data->>'type' is not null) then crdoc_data->>'type' else null end='comment' and crdoc_id=$crdoc_id";
+
+		$get_crime="select crdoc_data->>'comment_email' as comment_email,
+	  crdoc_data->>'comment_message' as comment_message,
+	  crdoc_data->>'comment_date' as comment_date,
+	  crdoc_data->>'status' as status,
+	  crdoc_data->>'type' as type
+	   from criminal_document where crdoc_data->>'type'='comment' and crdoc_id=$crdoc_id";
+ 
 		 return $get_crime;
 	}
 	function changeStatusComment($values,$crdoc_id)
@@ -538,6 +619,7 @@ function viewNewCrimeReportAlert($ofset){
 	return $updt;
 	}
 	function viewComment($ofset){
+ 
 		$get_comment="select  case when(crdoc_data->>'comment_email' is not null) then crdoc_data->>'comment_email' else null end as comment_email,
 	  case when(crdoc_data->>'comment_message' is not null) then crdoc_data->>'comment_message' else null end as comment_message,
 	  case when(crdoc_data->>'comment_date' is not null) then crdoc_data->>'comment_date' else null end as comment_date,
@@ -548,37 +630,52 @@ function viewNewCrimeReportAlert($ofset){
 	   from criminal_document
 	   where case when(crdoc_data->>'type' is not null) then crdoc_data->>'type' else null end='comment'
 		  order by case when(crdoc_data->>'status' is not null) then crdoc_data->>'status' else null end,crdoc_id desc limit 10 offset $ofset;";
+
+		$get_comment="select crdoc_data->>'comment_message' as comment_message,
+	  crdoc_data->>'comment_email' as comment_email,
+	  crdoc_data->>'comment_date' as comment_date,
+	  crdoc_id as crdoc_id,
+	  crdoc_data->>'status' as status
+	   from criminal_document where crdoc_data->>'type'='comment' order by crdoc_data->>'status',crdoc_id desc limit 10 offset $ofset;";
+ 
 		 return $get_comment;
 	}
 	function allCrimeReportCount()
 	{
-		$count="select count(crdoc_id) as crime_count from criminal_document
-		where date_part('year',case when((crdoc_data->>'report_date')::date is not null) then (crdoc_data->>'report_date')::date else null end)=date_part('year',NOW()) and
-		case when(crdoc_data->>'type' is not null) then crdoc_data->>'type' else null end='crime';";
-		return $count;
+	 $count="select count(crdoc_id) as crime_count from criminal_document
+    where date_part('year',case when((crdoc_data->>'report_date')::date is not null) then (crdoc_data->>'report_date')::date else null end)=date_part('year',NOW()) and
+    case when(crdoc_data->>'type' is not null) then crdoc_data->>'type' else null end='crime';";
+    return $count;
 	}
 	function allCrimeReportCountPagination()
 	{
 		$count="select count(crdoc_id) as crime_count from criminal_document
+ 
 		where case when(crdoc_data->>'type' is not null) then crdoc_data->>'type' else null end='crime';";
+ 
 		return $count;
 	}
 	function allCommentCountPagination()
 	{
 		$count="select count(crdoc_id) as comment_count from criminal_document
+ 
 		where case when(crdoc_data->>'type' is not null) then crdoc_data->>'type' else null end='comment';";
+ 
 		return $count;
 	}
 	function allCommentCount()
 	{
 		$count="select count(crdoc_id) as comment_count from criminal_document
+ 
 		where date_part('year',case when((crdoc_data->>'comment_date')::date is not null) then (crdoc_data->>'comment_date')::date else null end)=date_part('year',NOW()) and
 		 case when(crdoc_data->>'type' is not null) then crdoc_data->>'type' else null end='comment';";
+ 
 		return $count;
 	}
 	function countFugitiveReport()
 	{
 		$count="select count(crdoc_id) as report_count from criminal_document
+ 
 		where case when(crdoc_data->>'type' is not null) then crdoc_data->>'type' else null end='report';";
 		return $count;
 	}
@@ -609,17 +706,20 @@ function unreadComment(){
     case when(crdoc_data->'criminal_reward' is not null) then crdoc_data->'criminal_reward' else null end is not null;";
 		return $count;
 	}
+
+
 	function allCriminalCount()
 	{
 		$count="select count(crdoc_id) as criminal_count from criminal_document
+ 
 		where date_part('year',case when((crdoc_data->>'criminal_date')::date is not null) then (crdoc_data->>'criminal_date')::date else null end)=date_part('year',NOW()) and
 		case when(crdoc_data->>'type' is not null) then crdoc_data->>'type' else null end='criminal';";
 		return $count;
 	}
 
-
-  public function get_no_crimes()
+	public function get_no_crimes()
   {
+ 
     $query ="SELECT count(case when((criminal_document.crdoc_data->> 'city')::int is not null)
             then (criminal_document.crdoc_data->> 'city')::int else null end),
               case when(st.setting_data->>'setting_region_name' is not null) then st.setting_data->>'setting_region_name' else null end as city
@@ -629,6 +729,8 @@ function unreadComment(){
                 date_part('year',case when((crdoc_data->>'report_date')::date is not null) then (crdoc_data->>'report_date')::date else null end)=date_part('year',NOW())
               group by  city;";
 
+ 
+
     $b = $this->db->query($query);
 
     return $b->result_array();
@@ -636,6 +738,7 @@ function unreadComment(){
 
   public function get_crime_category()
   {
+ 
     $query ="SELECT count(st.setting_id) ,
             case when(st.setting_data->>'setting_crime_name' is not null) then st.setting_data->>'setting_crime_name' else null end as crime_type
             from criminal_document
@@ -647,10 +750,13 @@ function unreadComment(){
 
             group by  crime_type;";
 
+ 
+
     $b = $this->db->query($query);
 
     return $b->result_array();
   }
+ 
   function dashboardByGenderWantedArrested(){
 $get="select count(1) filter(where case when(crdoc_data->>'criminal_gender' is not null) then crdoc_data->>'criminal_gender' else null end='Male') as male,
 count(1) filter(where case when(crdoc_data->>'criminal_gender' is not null) then crdoc_data->>'criminal_gender' else null end='Female') as female
@@ -682,5 +788,9 @@ where case when(crdoc_data->>'type' ='criminal' is not null) then crdoc_data->>'
 group by  crime_type;";
 return $get;
   }
+
+
+ 
+ 
 }
 ?>

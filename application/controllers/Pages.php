@@ -72,7 +72,7 @@ else{
 		$data['crime_count']=$this->criminal_model->sql($this->criminal_model->allCrimeReportCount());
 		$data['arrested']=$this->ArrestedAndPostedCriminal();
 		$data['criminal_count']=$this->criminal_model->sql($this->criminal_model->allCriminalCount());
-		$data['fugitive']=$this->criminal_model->sql($this->criminal_model->viewFugitiveAddedDashboard());
+		// $data['fugitive']=$this->criminal_model->sql($this->criminal_model->viewFugitiveAddedDashboard());
 		$ofset=0;
 		// $suspects_id=null;
 		// $data['reporter']=$this->viewFugitiveReportDashboard($ofset,$suspects_id);
