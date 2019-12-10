@@ -22,7 +22,11 @@
       <?php } else {?>
       <i class="fa fa-eye" title="Seen"></i>
       <?php } ?>
+<<<<<<< HEAD
         <a href="javascript:;" data-email="<?php echo $row->comment_email;?>" data-oldcomment="<?php echo $row->comment_message;?>" class="icon arrow_back replay_by_email" data-original-title="Replay to email"
+=======
+        <a href="javascript:;" class="icon arrow_back" data-original-title="Replay to email"
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
         data-toggle="tootltip" data-placement="bottom" title="Reply by email"></a>
        </div></div>
     <?php } ?>
@@ -53,6 +57,7 @@
   </div>
   <!-- <div id="load_data"></div>
   <div class="col-md-12" id="loading"></div> -->
+<<<<<<< HEAD
   <div class="modal fade" id="replay_by_email" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -94,6 +99,10 @@
     $('#to_email').val($(this).data('email'));
     $('#replay_by_email').modal('show');
   })
+=======
+</div>
+<script>
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 $(function(){
 var ofset='<?php echo $_GET['ofset'];?>';
 $('#'+ofset).css('background-color','#bf9e58');
@@ -117,6 +126,65 @@ $('.to_seen').click(function(){
 $('.add_more_crime_report').click(function(){
 $(this).html($(this).data('report'));
 })
+<<<<<<< HEAD
 
+=======
+//
+// function addLoadingAnimation() {
+//   var load="";
+//   load+='<div class="preloader-dot-loading">';
+//   load+='<div class="cssload-loading"><i></i><i></i><i></i><i></i></div>';
+//   load+='</div>';
+//   return load;
+//   }
+//   function displayNoData() {
+//     var load="";
+//     load+='<div class="row">';
+//     load+='<div class="alert alert-danger alert-dismissable">';
+//     load+='<button aria-hidden="true" data-dismiss="alert" class="close" type="button"> × </button>';
+//     load+='No data is found!';
+//     load+='</div>';
+//     load+='</div>';
+//     return load;
+//   }
+// var ofset=2;
+// $(window).scroll(function(){
+//   // alert($(document).height() - $(window).height());
+//       if(Math.round($(window).scrollTop()) == $(document).height() - $(window).height())
+//      {
+//        var result='';
+//      $('#loading').html(addLoadingAnimation());
+//        $.ajax({
+//          url:'<?php// echo base_url('pages/getSomeComment?ofset=');?>'+ofset,
+//          success:function(data){
+//
+//         data=JSON.parse(data);
+//
+//         if(data){
+//         for(var respo in data){
+//           result+='<div class="well blog clo-md-6" >';
+//           result+='<div class="blog-pargraph">';
+//           result+='<h5>Email: <label style="color: #000;">'+data[respo].comment_email+'</label></h5>';
+//           result+='<label style="color: #000;">Message:</label>';
+//           result+='<p class="add_more_crime_report" data-report="'+data[respo].comment_message+'">'+(data[respo].comment_message).substr(0,50)+'<a href="javascript:;" style="color:green">More</a></p>';
+//           result+='</div>';
+//           result+='<div align="right">';
+//           result+='<small style="color:#A99FFB">Commented Date: '+data[respo].comment_date+'</small> <i class="fa fa-eye"></i> <a href="javascript:;" class="icon arrow_back"></a>';
+//          result+='</div></div>';
+//         }
+//
+//         $('.add_more_crime_report').click(function(){
+//         $(this).html($(this).data('report'));
+//         })
+//        }
+//        $('#load_data').append(result);
+//        $('#loading').html(displayNoData());
+//        ofset++;
+//          }
+//
+//        })
+//       }
+//    });
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 
 </script>

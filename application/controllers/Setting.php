@@ -11,11 +11,18 @@ function __construct()
     $this->load->model('setting_model');
     $this->load->helper(array('form', 'url'));
     $this->load->library('form_validation');
+<<<<<<< HEAD
     $this->load->library('user_agent');
     // $this->load->model('admin/order_model');
     $this->load->library('session');
     if(!$this->session->userdata('admin_id')){
       redirect('login');
+=======
+    // $this->load->model('admin/order_model');
+    $this->load->library('session');
+    if(!$this->session->userdata('admin_id')){
+      redirect('/');
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
     }
   }
   public function RegisterLocation()
@@ -31,6 +38,7 @@ function __construct()
 
    }
   }
+<<<<<<< HEAD
   function languageChanging($lang){
     // $this->session->unset_userdata('lang');
     $this->session->set_userdata('lang',$lang);
@@ -64,12 +72,18 @@ function __construct()
 
    }
   }
+=======
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
   public function changeStatusCrimeType()
   {
     $id=$_GET['id'];
     $status=$_GET['status'];
     $get=$this->setting_model->sql($this->setting_model->getSingleCrimeType($id));
+<<<<<<< HEAD
     $update=$this->setting_model->changeStatusCrimeType($get,$status,$id);
+=======
+    $update=$this->setting_model->updateCrimeType($get,$status,$id);
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
     if($update){
       echo '200';
     }
@@ -82,7 +96,11 @@ function __construct()
     $id=$_GET['id'];
     $status=$_GET['status'];
     $get=$this->setting_model->sql($this->setting_model->getSingleRegion($id));
+<<<<<<< HEAD
     $update=$this->setting_model->changeStatusLocation($get,$status,$id);
+=======
+    $update=$this->setting_model->updateRegion($get,$status,$id);
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
     if($update){
       echo '200';
     }

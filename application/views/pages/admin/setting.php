@@ -6,19 +6,34 @@
 </div>
 </div>
 <?php $this->session->unset_userdata('success'); } ?>
+<<<<<<< HEAD
             <div class="col-md-9" style="margin-top:-45px">
               <div class="row">
                 <div class="col-md-9">
                   <h4>User Account As Admin</h4>
+=======
+            <div class="col-md-9">
+              <div class="row">
+                <div class="col-md-9">
+                  <h4>User Account As Admin</h4>
+                </div>
+                <div class="col-md-3" align="right">
+                 <a href="#" data-toggle="modal" data-target="#addModal">
+                  <button class="btn btn-xs main-color-bg"><i class="fa fa-plus fa-lg"></i> Add Admin</button>
+                </a>
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
                 </div>
               
               </div>
               <ul id="myTab2" class="nav nav-pills boot-tabs">
               <li class="active" id="posted"><a href="#home2" data-toggle="tab">Active User</a></li>
               <li id="arrested"><a href="#profile2" data-toggle="tab" >Suspended User</a></li>
+<<<<<<< HEAD
               <li style="float:right"> <a href="#" data-toggle="modal" data-target="#addModal">
                 <button class="btn btn-xs main-color-bg"><i class="fa fa-plus fa-lg"></i> Add Admin</button>
               </a></li>
+=======
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 
               </ul>
 
@@ -215,17 +230,29 @@
               <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Phone:</label>
                 <input type="text" id="phone" class="form-control phone_valid" name="admin_phone"
+<<<<<<< HEAD
                 placeholder="09--" pattern="[0-9]{10}" maxlength="10" title="Phone must contain 10 digits">
+=======
+                placeholder="09--" pattern="[0-9]{10}" maxlength="10">
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
                 <div style="color:red" class="admin_phone"></div>
               </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label">Email:</label>
+<<<<<<< HEAD
                 <input type="email" id="email" class="form-control" name="admin_email" placeholder="Email" title="Must contain email format i.e example@gmail.com">
+=======
+                <input type="email" id="email" class="form-control" name="admin_email" placeholder="Email">
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
                 <div style="color:red" class="admin_email"></div>
               </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label">Password:</label>
+<<<<<<< HEAD
                 <input type="password" id="password" class="form-control" name="admin_password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters">
+=======
+                <input type="password" id="password" class="form-control" name="admin_password" placeholder="Password">
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
                 <div style="color:red" class="admin_password"></div>
               </div>
               <div class="form-group">

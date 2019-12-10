@@ -46,6 +46,7 @@ class Setting_model extends MY_Model {
 	$register=$this->db->insert('setting',array('setting_data'=>$data));
 	return $register;
   }
+<<<<<<< HEAD
 	function udpateCrimeType($get,$values){
 		$data=array(
 			'setting_crime_name'=>$values['setting_crime_name'],
@@ -59,6 +60,9 @@ class Setting_model extends MY_Model {
 	return $update;
   }
   function changeStatusCrimeType($get,$status,$id){
+=======
+  function updateCrimeType($get,$status,$id){
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 		$data=array(
 			'setting_crime_name'=>$get[0]->setting_crime_name,
 			'setting_crime_description'=>$get[0]->setting_crime_description,
@@ -82,7 +86,11 @@ class Setting_model extends MY_Model {
 		 from setting where setting_id=$setting_id;";
 		 return $get_setting;
   }
+<<<<<<< HEAD
   function changeStatusLocation($get,$status,$id){
+=======
+  function updateRegion($get,$status,$id){
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 		$data=array(
 			'setting_region_name'=>$get[0]->setting_region_name,
 			'setting_city_or_region'=>$get[0]->setting_city_or_region,
@@ -106,6 +114,7 @@ class Setting_model extends MY_Model {
 	$register=$this->db->insert('setting',array('setting_data'=>$data));
   return $register;
   }
+<<<<<<< HEAD
   function updateLocation($get,$values){
 		$data=array(
 			'setting_region_name'=>$values['setting_region_name'],
@@ -118,6 +127,8 @@ class Setting_model extends MY_Model {
 	$update=$this->db->where('setting_id',$values['setting_id'])->update('setting',array('setting_data'=>$data));
   return $update;
   }
+=======
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
   function getRegion(){
 		$get_setting="select case when(setting_data->>'setting_region_name' is not null) then  setting_data->>'setting_region_name' else null end as setting_region_name,
 		case when(setting_data->>'setting_city_or_region' is not null) then setting_data->>'setting_city_or_region' else null end as setting_city_or_region,

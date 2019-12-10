@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <div class="col-md-9" style="margin-top:-45px">
+=======
+<div class="col-md-9">
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 	<div class="row">
 		<?php if($this->session->userdata('success')) {?>
 		<div class="col-md-12">
@@ -149,13 +153,21 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
+<<<<<<< HEAD
         <h5 class="modal-title" id="ModalLabel">Location Name: <i class="location_name"></i>
+=======
+        <h5 class="modal-title" id="ModalLabel">New Location
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
         <button type="button" class="close close_comment" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button></h5>
       </div>
 
+<<<<<<< HEAD
       <form role="form" method="post" action="<?php echo base_url('setting/updateLocation');?>">
+=======
+      <form role="form" method="post" action="<?php echo base_url('setting/RegisterLocation');?>">
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
       <div class="modal-body">
           <div class="form-group">
             <label for="message-text" class="col-form-label">Location Name: </label>
@@ -172,7 +184,11 @@
           </div>
       </div>
       <div class="modal-footer">
+<<<<<<< HEAD
      <button type="submit" class="btn btn-border" onclick="saveComment()"><span class="icon icon_pencil"></span> Edit</button>
+=======
+     <button type="submit" class="btn btn-border" onclick="saveComment()"><span class="fa fa-plus"></span> Add</button>
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
       </div>
     </form>
     </div>
@@ -181,6 +197,7 @@
 <script>
 $('.edit').click(function(){
 	$('#setting_region_name').val($(this).data('name'));
+<<<<<<< HEAD
 	// $('#setting_city_or_region').val($(this).data('city'));
 	$('.location_name').text($(this).data('name'));
 	$('#setting_id').val($(this).data('id'));
@@ -190,6 +207,10 @@ $('.edit').click(function(){
 	else{
 		$('#setting_city_or_region').prop('selectedIndex',0)
     }
+=======
+	$('#setting_city_or_region').val($(this).data('city'));
+	$('#setting_id').val($(this).data('id'));
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 	$('#editLocationModal').modal('show');
 })
 $('.suspend_reactivate').click(function(){

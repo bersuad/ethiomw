@@ -22,29 +22,50 @@ class API extends MY_Controller {
 		{
 	$crime=$this->criminal_model->sql("
 	select count(crdoc_id) as crime_count from criminal_document
+<<<<<<< HEAD
 	where  case when(crdoc_data->>'type' is not null) then crdoc_data->>'type' else null end='crime' and
 	case when(crdoc_data->>'status' is not null) then crdoc_data->>'status' else null end ='0';");
 	$comment=$this->criminal_model->sql("
 	select count(crdoc_id) as comment_count from criminal_document
 	where  case when(crdoc_data->>'type' is not null) then crdoc_data->>'type' else null end ='comment' and
 	case when(crdoc_data->>'status' is not null) then crdoc_data->>'status' else null end ='0';");
+=======
+	where  crdoc_data->>'type'='crime' and crdoc_data->>'status'='0' ;");
+	$comment=$this->criminal_model->sql("
+	select count(crdoc_id) as comment_count from criminal_document
+	where  crdoc_data->>'type'='comment' and crdoc_data->>'status'='0';");
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 	$data['crime']=$crime[0]->crime_count;
 	$data['comment']=$comment[0]->comment_count;
 	echo json_encode($data);
 		}
 		public function newCrimeCount()
 		{
+<<<<<<< HEAD
 			$criminal_report=$this->criminal_model->sql($this->criminal_model->countNewCrime());
 			$criminal_report=$criminal_report[0]->crime_count;
+=======
+			$criminal_report=$this->criminal_model->sql($this->criminal_model->countFugitiveReport());
+			$criminal_report=$criminal_report[0]->report_count;
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 			return $criminal_report;
 		}
 		public function alertNewCrime()
 		{
+<<<<<<< HEAD
 		$crime=$this->criminal_model->sql($this->criminal_model->viewNewCrimeReportAlert(0));
 		$data='';
 		$i=1;
 foreach($crime as $row){
 	if($i<=10){
+=======
+		$crime=$this->criminal_model->sql($this->criminal_model->viewNewCrimeReport(0));
+		$data='';
+		$i=1;
+foreach($crime as $row){
+
+	if($i<=4){
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 	$data.='<div class="container content" style="max-width: 230px; color: #444;">';
 	$data.='<div class="blog">';
 	$data.='<div class="blog-pargraph">';

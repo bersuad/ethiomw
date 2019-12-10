@@ -54,9 +54,13 @@
                     <div class="col-md-3">
                         <div class="widget no-border m-0">
                             <ul class="social-icons icon-sm sm-text-center">
+<<<<<<< HEAD
                                 <h5 style="color: #fff; font-size: 13px;">
                                   <?php echo ($this->session->userdata('lang')=='amh'?'የኢትዮጵያ ዋና ተፈላጊ ወንጀለኞችና ተጠርጣሪዎች':"Ethiopian Most Wanted Criminal And Suspects");?>
                               </h5>
+=======
+                                <h5 style="color: #fff;">Ethiopian Most Wanted Criminal And Suspects</h5>
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
                             </ul>
                         </div>
                     </div>
@@ -67,6 +71,7 @@
                                   <a class="dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                                    aria-expanded="false" type="button" data-hover="dropdown">
                                     <span class="fa fa-bell faa-ring animated"></span>
+<<<<<<< HEAD
                                     <?php echo ($this->session->userdata('lang')=='amh'?'ኤፍ አይ አር ረፖርት':"FIR Report");?>
                                     <sup class="fir_count"></sup>
                                   </a>
@@ -79,6 +84,39 @@
 
                                 </li>
 
+=======
+                                    FIR Report <sup class="fir_count"></sup>
+                                  </a>
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-top: 10%;">
+                                    <div style="overflow-y: scroll;height:318px" id="alert_text">
+<<<<<<< HEAD
+                                  
+
+                                  </div>
+
+=======
+                                    <div class="container content" style="max-width: 230px; color: #444;">
+                                        <div class="blog">
+                                            <div class="blog-pargraph">
+                                                <h6><i class="fa fa-user fa-sm"></i> <label style="color: #000;">Abebe</label></h6>
+                                                <h6><i class="fa fa-envelope fa-sm"></i> <label style="color: #000;"> mrx@gmail.com</label></h6>
+                                                <h6><i class="fa fa-phone fa-sm"></i> <label style="color: #000;">+251911111111</label></h6>
+                                                <label style="color: #000;">Message:</label>
+                                                <p> It is a long established fact that readable when looking at its layout...
+                                                  <a style="color:green" href="javascript:;"> More</a></p>
+                                            </div>
+                                            <hr>
+
+                                      </div>
+                                  </div>
+
+                                  </div>
+                                  
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
+
+                                </li>
+                                <!-- <li class="m-0 pl-10 pr-10"><a href="#"> New Crime Report <sup><small class="badge" style="background-color: #d60808; color: #fff;">4</small></sup></a></li> -->
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
                                 <li class="m-0 pl-10 pr-10">
 
                                     <img class="image" src="<?php echo base_url().$this->session->userdata('image');?>"
@@ -86,6 +124,7 @@
                                     style="min-width: auto; min-height: auto;
                                     max-height:30px!important; max-width: 30px; border-radius: 50%; margin-top: -5%;">
                                   </li>
+<<<<<<< HEAD
                                    <li class="one-big-icon mega-li">
                                     <select onchange="javascript:window.location.href='<?php echo base_url(); ?>setting/languageChanging/'+this.value;" style="padding: 0px;background-color: #182c31;color:#cccccc;border-top-color:#182c31;border-bottom-color:#182c31;border-left-color:#182c31;border-right-color: #182c31;width: 70px">
                                        <option value="amh"  <?php if ($this->session->userdata('lang') == 'amh') {
@@ -106,6 +145,11 @@
                                     <?php echo ($this->session->userdata('lang')=='amh'?'ከመግቢያ ሂሳብ ውጣ':"Logout");?>
 
                                  </a></li>
+=======
+
+                                <li><a href="javascript:;" class="change_password"><i class='icon icon_key_alt'></i> Change Password</a></li>
+                                <li><a href="<?php echo base_url('login');?>"><i class='fa fa-sign-out'></i> Logout</a></li>
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 
                             </ul>
                         </div>
@@ -122,12 +166,17 @@
                 <div class="panel-heading main-color-bg" style="background-color: #182c31; color: #fff;">
 
                       <h3 class='panel-title' align='left'><a href="<?php echo base_url('/admin');?>">
+<<<<<<< HEAD
                           <span class='fa fa-list'></span> <?php echo ($this->session->userdata('lang')=='amh'?'ማውጫ':"Menu");?>
 </a></h3>
+=======
+                          <span class='fa fa-list'></span> Menu</a></h3>
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 
                 </div>
                 <div class="panel-body">
                   <div class="list-group">
+<<<<<<< HEAD
                     <a href="<?php echo base_url()?>admin" class="<?=(current_url()==base_url('admin')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-home"></span> 
                       <?php echo ($this->session->userdata('lang')=='amh'?'መነሻ ገጽ':"Dashboard");?></a>
                     <a href="<?php echo base_url()?>all-wanted?page=1&which=both" class="<?=(current_url()==base_url('all-wanted')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-user"></span> 
@@ -157,11 +206,32 @@
                       <span class="fa fa-users"></span>
                                             <?php echo ($this->session->userdata('lang')=='amh'?'የተጠቃሚዎች መግቢያ':"User Account");?>
                        
+=======
+                    <a href="<?php echo base_url()?>admin" class="<?=(current_url()==base_url('admin')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-home"></span> Dashbord</a>
+                    <a href="<?php echo base_url()?>all-wanted?page=1&which=both" class="<?=(current_url()==base_url('all-wanted')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-user"></span> Criminal And Suspects</a>
+                    <a href="<?php echo base_url()?>all-reported?page=1" class="<?=(current_url()==base_url('all-reported')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-edit"></span>
+                      Criminal And Suspects Report <span id="criminal_count_report"></span></a>
+                    <a href="<?php echo base_url()?>all-crime-report?ofset=1"
+                      class="<?=(current_url()==base_url('all-crime-report')) ? 'list-group-item active':'list-group-item'?>">
+                      <span class="fa fa-bell faa-ring"></span>
+                      FIR Report
+                      <span id="crime_report_count"></span></a>
+                    <!-- <a href="#" class="list-group-item"><span class="fa fa-life-ring"></span> Support Request<span class="badge main-color-bg">10</span></a> -->
+                    <a href="<?php echo base_url()?>comment?ofset=1"
+                       class="<?=(current_url()==base_url('comment')) ? 'list-group-item active':'list-group-item'?>">
+                      <span class="fa fa-envelope faa-shake "></span> Comment
+                      <span  id="comment_count"></span></a>
+                    <a href="<?php echo base_url('account_user')?>"
+                      class="<?=(current_url()==base_url('account_user')) ? 'list-group-item active':'list-group-item'?>">
+<<<<<<< HEAD
+                      <span class="fa fa-users"></span> User Account
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
                     </a>
                     <div class=" dropdown">
                       <a href="#" class="<?=(
                                               current_url()==base_url('page-settings')
                                             ) ||  current_url()==base_url('city-settings')
+<<<<<<< HEAD
                                             ?
                                             'list-group-item dropdown-toggle active'
                                             : 'list-group-item dropdown-toggle'
@@ -185,6 +255,26 @@
                     </div>
 
 
+=======
+                                            ? 
+                                            'list-group-item dropdown-toggle active'
+                                            : 'list-group-item dropdown-toggle'
+                                          ?>" 
+                                            id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="fa fa-cogs"></span> Settings
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 100%;">
+                        <a  class="<?=(current_url()==base_url('city-settings')) ? 'list-group-item dropdown-item active':'list-group-item dropdown-item'?>" href="<?php echo site_url('city-settings')?>">Locations</a>
+                        <a class="<?=(current_url()==base_url('page-settings')) ? 'list-group-item dropdown-item active':'list-group-item dropdown-item'?>" href="<?php echo site_url('page-settings')?>">Crime Category</a>
+                      </div>
+                      
+                    </div>
+                    
+                    
+=======
+                      <span class="fa fa-cogs"></span> User Account</a>
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
                   </div>
                 </div>
               </div>

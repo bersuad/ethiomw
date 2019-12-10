@@ -19,7 +19,11 @@
 <meta name="author" content="ThemeMascot" />
 
 <!-- Page Title -->
+<<<<<<< HEAD
 <title><?php echo $this->lang->line('Ethiopian');?> <?php echo $this->lang->line('Most');?> <?php echo $this->lang->line('Wanted Criminal And Suspects');?></title>
+=======
+<title>Ethiopia Most Wanted Criminal And Suspects</title>
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 
 <!-- Favicon and Touch Icons -->
 <link href="<?php echo site_url()?>upload/logo/federal_logo.png" rel="shortcut icon" type="image/png">
@@ -33,7 +37,10 @@
 <link href="<?php echo site_url()?>assets/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
 <link href="<?php echo site_url()?>assets/css/animate.css" rel="stylesheet" type="text/css">
 <link href="<?php echo site_url()?>assets/css/sweetalert2.min.css" rel="stylesheet" type="text/css">
+<<<<<<< HEAD
 <link href="<?php echo site_url()?>assets/css/flag/css/flag-icon.min.css" rel="stylesheet" type="text/css">
+=======
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 <link href="<?php echo site_url()?>assets/css/css-plugin-collections.css" rel="stylesheet"/>
 <!-- CSS | menuzord megamenu skins -->
 <link id="menuzord-menu-skins" href="<?php echo site_url()?>assets/css/menuzord-skins/menuzord-boxed.css" rel="stylesheet"/>
@@ -141,6 +148,7 @@
             <div class="widget no-border m-0">
               <ul class="list-inline pull-right sm-pull-none sm-text-center mt-5">
                 <li class="m-0 pl-10 pr-10">
+<<<<<<< HEAD
                   <a href="<?php echo base_url('top_most_wanted');?>">
                     <i class="fa fa-key"> <?php echo $this->lang->line('Top Most Wanted List');?></i>
                   </a>
@@ -167,6 +175,24 @@
                 </li>
                 
                 	
+=======
+<<<<<<< HEAD
+                  <a href="<?php echo base_url('top_most_wanted');?>">
+=======
+                  <a href="#">
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
+                    <i class="fa fa-key"> Top most wanted list</i>
+                  </a>
+                </li>
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope text-theme-colored"></i>
+                  <a class="text-gray" href="javascript:;" data-toggle="modal" data-target="#commentForm">Comment</a>
+                </li>
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-exclamation-circle text-theme-colored"></i> <a class="text-gray" href="#" onclick="aggrement()">FIR Report</a> </li>
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-colored"></i> <a class="text-gray" href="#">6583</a> </li>
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-clock-o text-theme-colored"></i> 24/7 </li>
+                	<!-- <a href="#" id="side-panel-trigger" class="side-panel-trigger">
+                    <i class="fa fa-bars fa-lg text-gray"></i></a> -->
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
               </ul>
             </div>
           </div>

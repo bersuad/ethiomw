@@ -1,5 +1,9 @@
 
             <div class="col-md-9" style="margin-top:-45px">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
               <div class="row">
                 <br>
                 <div class="col-md-8">
@@ -7,6 +11,7 @@
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
+<<<<<<< HEAD
                     <div class="input-group">
                     <input type="text" id="automplete-6"
                     value="<?php if(isset($_GET['suspects_name'])){echo $_GET['suspects_name'];}?>"
@@ -18,12 +23,31 @@
                 </div>
               </div>
            
+=======
+                <span>Filter By</span>
+                <select class="form-control" onchange="filterByCrimeType(this.value,'crime')" id="filter_by_crime">
+                  <option value="">--Crime Category--</option>
+                  <?php foreach($crime_type as $row) {?>
+                  <option value="<?php echo $row->setting_id?>"><?php echo ucwords($row->setting_crime_name);?></option>
+                <?php } ?>
+                </select>
+              </div>
+                </div>
+              </div>
+=======
+              <h4>All Reported Criminal And Suspects</h4>
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
                 <div id="myTabContent2" class="tab-content">
                     <div class="tab-pane fade in active" id="home2">
                         <div class="row">
                             <div class="section-content">
                                 <div class="row multi-row-clearfix" >
+<<<<<<< HEAD
                                 <?php if($reporter) {?>
+=======
+
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
                                 <?php foreach($reporter as $key) {?>
                                     <div class="col-sm-6">
                                       <div class="icon-box iconbox-theme-colored bg-lighter" style="margin-bottom:10px;height:40vh" >
@@ -59,6 +83,7 @@
                                                       > More</a></p></td>
                                               </tr>
                                               <tr>
+<<<<<<< HEAD
 
                                               </tr>
                                           </tbody>
@@ -73,6 +98,16 @@
                                     </div>
                                     </div>
                                   <?php }  ?>
+=======
+
+                                              </tr>
+                                          </tbody>
+                                      </table>
+
+                                      </div>
+                                    </div>
+                                  <?php } ?>
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
                                 </div>
                             </div>
                         </div>
@@ -102,12 +137,17 @@
                         </ul>
                       </nav>
                     </div>
+<<<<<<< HEAD
                   <?php } ?>
+=======
+
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 
                 </div>
             </div>
         </div>
     </div>
+<<<<<<< HEAD
      <link href = "<?php echo base_url()?>/autocomplete/theme.css" rel = "stylesheet">
   
  <script src = "<?php echo base_url()?>/autocomplete/jquery-ui.js"></script>
@@ -135,6 +175,8 @@ window.location.reload(false);
 $( "#automplete-6" ).autocomplete("option", "position",{ my : "right+1 top+45", at: "right top" })
        });
     </script>
+=======
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
     <script>
     $(function(){
     var ofset='<?php echo $_GET['page'];?>';

@@ -36,7 +36,11 @@
           <label for="recipient-name" class="col-form-label">New Password:</label>
             <div class="input-group">
           <input autocomplete="off" type="password"  id="new_password"class="form-control" name="new_password"
+<<<<<<< HEAD
           placeholder="Create New Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters">
+=======
+          placeholder="Create New Password">
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
           <span class="input-group-addon"><a class="mouseup_mousedown_new"><i class="fa fa-eye-slash"></i></a></span>
         </div>
           <div style="color:red" class="new_password"></div>
@@ -59,7 +63,15 @@
     </div>
     </div>
     <script>
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+    
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
     $('.mouseup_mousedown_confirm').on({
            mousedown: function() {
                $('#confirm_password').prop('type','text');
@@ -142,7 +154,11 @@ $("#change_password_form_submit").on('submit', function(e){
                 },
     success: function(data){
     if(data=='200'){
+<<<<<<< HEAD
   window.location.href='<?php echo base_url('login');?>';
+=======
+  window.location.href='<?php echo base_url('/');?>';
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
       }
       else if(data=='503'){
         $('.confirm_password').text('Old password does not exist, try again!');
@@ -242,23 +258,39 @@ $('.read_more').click(function(){
       url:'<?php echo base_url('criminal/countCommentNewCrime');?>',
       success:function(data){
         data=JSON.parse(data);
+<<<<<<< HEAD
         $('.crime_report_count').html('<sup><small><b class="badge" style="background-color: black; color: #fff;">'+data.crime+
                             '</b></small></sup>');
         $('#comment_count').html('<span class="badge main-color-bg">'+data.comment+'</span>');
         // $('#criminal_count_report').html('<span class="badge main-color-bg">'+data.criminal_report+'</span>');
+=======
+        $('.fir_count').html('<sup><small><b class="badge" style="background-color: #d60808; color: #fff;">'+data.crime+
+                            '</b></small></sup>');
+        $('#comment_count').html('<span class="badge main-color-bg">'+data.comment+'</span>');
+        $('#criminal_count_report').html('<span class="badge main-color-bg">'+data.criminal_report+'</span>');
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
       }
     })
   }
   function redundencyRequest(){
+<<<<<<< HEAD
     // alert("data.new_crime_text");
+=======
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
     $.ajax({
       url:'<?php echo base_url('API/redundencyRequest');?>',
       success:function(data){
         data=JSON.parse(data);
+<<<<<<< HEAD
         $('#alert_text').html(data.new_crime_text);
         $('.fir_count').html('<sup><small><b class="badge" style="background-color: red; color: #fff;">'+data.new_crime_count+
                             '</b></small></sup>');
       // alert(data.new_crime_count);
+=======
+        $('#crime_report_count').html('<span class="badge main-color-bg">'+data.new_crime_count+'</span>');
+        $('#alert_text').html(data.new_crime_text);
+
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
       }
     })
   }

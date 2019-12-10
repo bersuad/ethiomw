@@ -7,14 +7,26 @@ class Pages extends MY_Controller {
 	    parent::__construct();
 	    $this->load->database();
 	    $this->load->model('criminal_model');
+<<<<<<< HEAD
 			$this->load->model('setting_model');
+=======
+<<<<<<< HEAD
+			$this->load->model('setting_model');
+=======
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 	    $this->load->helper(array('form', 'url'));
 	    $this->load->library('form_validation');
 			$this->load->library('session');
 			if(!$this->session->userdata('admin_id')){
+<<<<<<< HEAD
 				redirect('login');
 			}
 		$this->lang->load('information','amharic');
+=======
+				redirect('/');
+			}
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 	  }
 function addUser()
 	{
@@ -68,6 +80,7 @@ else{
 	}
 	public function admin()
 	{
+<<<<<<< HEAD
 		// $this->session->set_userdata('lang','eng');
 		$data['crime_count']=$this->criminal_model->sql($this->criminal_model->allCrimeReportCount());
 		$data['arrested']=$this->ArrestedAndPostedCriminal();
@@ -77,6 +90,19 @@ else{
 		// $suspects_id=null;
 		// $data['reporter']=$this->viewFugitiveReportDashboard($ofset,$suspects_id);
 		// print_r($data['criminal_count']);die();
+=======
+		$data['crime_count']=$this->criminal_model->sql($this->criminal_model->allCrimeReportCount());
+		$data['arrested']=$this->ArrestedAndPostedCriminal();
+		$data['criminal_count']=$this->criminal_model->sql($this->criminal_model->allCriminalCount());
+		$data['fugitive']=$this->criminal_model->sql($this->criminal_model->viewFugitiveAddedDashboard());
+		$ofset=0;
+		$data['reporter']=$this->viewFugitiveReportDashboard($ofset);
+<<<<<<< HEAD
+		// print_r($data['criminal_count']);die();
+=======
+		// print_r($data['reporter']);die();
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 		$this->data=$data;
 		$this->load->view('included/admin/header.php');
 		$this->load->view('pages/admin/admin',$data);
@@ -85,14 +111,24 @@ else{
 	public function paginationRuleReporter()
 	{
 		$page=$this->criminal_model->sql($this->criminal_model->countFugitiveReport());
+<<<<<<< HEAD
 		$limit=10;
+=======
+		$limit=4;
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 		$page=ceil($page[0]->report_count/$limit);
 	return	$page;
 	}
 
+<<<<<<< HEAD
 	public function viewFugitiveReportDashboard($ofset,$suspects_id)
 	{
 		$data=$this->criminal_model->sql($this->criminal_model->viewFugitiveReportDashboard($ofset,$suspects_id));
+=======
+	public function viewFugitiveReportDashboard($ofset)
+	{
+		$data=$this->criminal_model->sql($this->criminal_model->viewFugitiveReportDashboard($ofset));
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 		$report=array();
 		foreach ($data as $row) {
 			$info_fugitive=$this->criminal_model->sql($this->criminal_model->changeStatusCriminal($row->fugitive_id));
@@ -122,8 +158,11 @@ public function edit_wanted_list($crdoc_id=NULL)
 {
 	if($crdoc_id){
   $this->load->view('included/admin/header.php');
+<<<<<<< HEAD
 	$data['crime_type']=$this->setting_model->sql($this->setting_model->getCrimeType());
 
+=======
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 	$data['criminal']=$this->criminal_model->sql($this->criminal_model->changeStatusCriminal($crdoc_id));
 	$this->data=$data;
 	$this->load->view('pages/admin/edit_wanted_list',$data);
@@ -146,6 +185,7 @@ public function getFugitive()
 		if(isset($_GET['page']) and isset($_GET['which'])){
 		$page=$_GET['page'];
 		$which=$_GET['which'];
+<<<<<<< HEAD
 		if(isset($_GET['suspects_id'])){
 			$suspects_id=$_GET['suspects_id'];
 	    }
@@ -169,6 +209,25 @@ public function getFugitive()
 else{
 	$data['criminal_posted']=$this->criminal_model->sql($this->criminal_model->viewCriminalPosted(0,'all','all',null));
 	$data['criminal_arrested']=$this->criminal_model->sql($this->criminal_model->viewCriminalArrested(0,null));
+=======
+		$ofset=($page==0?0:($page-1) * 10);
+		if($which=='posted'){
+			$data['criminal_posted']=$this->criminal_model->sql($this->criminal_model->viewCriminalPosted($ofset));
+			$data['criminal_arrested']=$this->criminal_model->sql($this->criminal_model->viewCriminalArrested(0));
+		}
+		else if($which=='arrested'){
+			$data['criminal_posted']=$this->criminal_model->sql($this->criminal_model->viewCriminalPosted(0));
+			$data['criminal_arrested']=$this->criminal_model->sql($this->criminal_model->viewCriminalArrested($ofset));
+		}
+		else{
+			$data['criminal_posted']=$this->criminal_model->sql($this->criminal_model->viewCriminalPosted(0));
+			$data['criminal_arrested']=$this->criminal_model->sql($this->criminal_model->viewCriminalArrested(0));
+		}
+}
+else{
+	$data['criminal_posted']=$this->criminal_model->sql($this->criminal_model->viewCriminalPosted(0));
+	$data['criminal_arrested']=$this->criminal_model->sql($this->criminal_model->viewCriminalArrested(0));
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 }
     $this->data=$data;
 		$this->load->view('pages/admin/all_wanted_list',$data);
@@ -178,15 +237,22 @@ else{
 	public function add_new_wanted()
 	{
 		$this->load->view('included/admin/header.php');
+<<<<<<< HEAD
 		$data['crime_type']=$this->setting_model->sql($this->setting_model->getCrimeType());
 $this->data=$data;
 		$this->load->view('pages/admin/add_new_wanted',$data);
 		$this->load->view('included/admin/footer.php');
+=======
+		$this->load->view('pages/admin/add_new_wanted');
+		$this->load->view('included/admin/footer.php');
+<<<<<<< HEAD
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 	}
 public function all_reported()
 	{
 		$this->load->view('included/admin/header.php');
 		$page=$_GET['page'];
+<<<<<<< HEAD
 		if(isset($_GET['suspects_id'])){
 			$suspects_id=$_GET['suspects_id'];
 		}
@@ -195,6 +261,10 @@ public function all_reported()
 		}
 		$ofset=($page==0?0:($page-1) * 10);
 		$data['reporter']=$this->viewFugitiveReportDashboard($ofset,$suspects_id);
+=======
+		$ofset=($page==0?0:($page-1) * 4);
+		$data['reporter']=$this->viewFugitiveReportDashboard($ofset);
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 		$data['pagination_page']=$this->paginationRuleReporter();
     $this->data=$data;
 		$this->load->view('pages/admin/all_report',$data);
@@ -230,10 +300,40 @@ public function all_reported()
 		$this->load->view('included/admin/footer.php');
 	}
 
+<<<<<<< HEAD
 function getSomeCrimeReport(){
 	$ofset=$_GET['ofset'];
 	$ofset=($ofset-1) * 4;
 	$data=$this->criminal_model->sql($this->criminal_model->viewNewCrimeReportAlert($ofset));
+=======
+=======
+	}
+public function all_reported()
+	{
+		$this->load->view('included/admin/header.php');
+		$page=$_GET['page'];
+		$ofset=($page==0?0:($page-1) * 4);
+		$data['reporter']=$this->viewFugitiveReportDashboard($ofset);
+		$data['pagination_page']=$this->paginationRuleReporter();
+    $this->data=$data;
+		$this->load->view('pages/admin/all_report',$data);
+		$this->load->view('included/admin/footer.php');
+	}
+ public function account_user()
+	{
+		$this->load->view('included/admin/header.php');
+		$data['suspend_user']=$this->criminal_model->sql($this->criminal_model->viewSuspendUser());
+		$data['active_user']=$this->criminal_model->sql($this->criminal_model->viewActiveUser());
+		$this->data=$data;
+		$this->load->view('pages/admin/setting',$data);
+		$this->load->view('included/admin/footer.php');
+	}
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
+function getSomeCrimeReport(){
+	$ofset=$_GET['ofset'];
+	$ofset=($ofset-1) * 4;
+	$data=$this->criminal_model->sql($this->criminal_model->viewNewCrimeReport($ofset));
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 	echo json_encode($data);
 }
 function getSomeComment(){
@@ -245,6 +345,7 @@ function getSomeComment(){
 	public function crime_report()
 	{
 		if(isset($_GET['ofset']) and $_GET['ofset'] ){
+<<<<<<< HEAD
 			$start_date=$this->input->post('start_date');
 			$end_date=$this->input->post('end_date');
 			$crime_type=$this->input->post('crime_type');
@@ -261,12 +362,21 @@ function getSomeComment(){
 		$this->load->view('included/admin/header.php');
 		$data['crime']=$this->criminal_model->sql($this->criminal_model->viewNewCrimeReport($start_date,$end_date,$crime_type));
 
+=======
+		$ofset=$_GET['ofset'];
+		$ofset=($ofset-1) * 10;
+		$this->load->view('included/admin/header.php');
+		$data['crime']=$this->criminal_model->sql($this->criminal_model->viewNewCrimeReport($ofset));
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 		$pagination=$this->criminal_model->sql($this->criminal_model->allCrimeReportCountPagination());
 		$limit=10;
 		$page=ceil($pagination[0]->crime_count/$limit);
 		$data['pagination']=$page;
+<<<<<<< HEAD
 		$data['crime_type']=$this->setting_model->sql($this->setting_model->getCrimeType());
 		$data['selected_value']=$crime_type;
+=======
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 		$this->data=$data;
 		$this->load->view('pages/admin/crime_report',$data);
 		$this->load->view('included/admin/footer.php');
@@ -275,6 +385,7 @@ function getSomeComment(){
 		redirect('pages/error');
 	}
 	}
+<<<<<<< HEAD
 	public function takeSuspectsName()
 	{
 	$name=$_GET['term'];
@@ -287,6 +398,8 @@ function getSomeComment(){
 	}
   echo json_encode($data);
 	}
+=======
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 public function comment()
 	{
 		if(isset($_GET['ofset']) and $_GET['ofset'] ){
@@ -301,6 +414,7 @@ public function comment()
 		$this->data=$data;
 		$this->load->view('pages/admin/comment',$data);
 		$this->load->view('included/admin/footer.php');
+<<<<<<< HEAD
 	}
 	else{
 		redirect('pages/error');
@@ -313,5 +427,27 @@ public function comment()
 		$data=$this->criminal_model->get_no_crimes();
 		print_r($data);
 		return true;
+=======
+<<<<<<< HEAD
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 	}
+	else{
+		redirect('pages/error');
+
+	}
+}
+
+
+	public function graph_data(){
+		$data=$this->criminal_model->get_no_crimes();
+		print_r($data);
+		return true;
+=======
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
+	}
+	else{
+		redirect('pages/error');
+
+	}
+}
 }

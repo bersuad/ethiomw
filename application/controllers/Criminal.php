@@ -8,12 +8,20 @@ function __construct()
     parent::__construct();
     $this->load->database();
     $this->load->model('criminal_model');
+<<<<<<< HEAD
     $this->load->model('setting_model');
+=======
+<<<<<<< HEAD
+    $this->load->model('setting_model');
+=======
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
     $this->load->helper(array('form', 'url'));
     $this->load->library('form_validation');
     // $this->load->model('admin/order_model');
     $this->load->library('session');
     if(!$this->session->userdata('admin_id')){
+<<<<<<< HEAD
       redirect('login');
     }
   }
@@ -31,6 +39,11 @@ function __construct()
 // echo $key;
 // }
 //   }
+=======
+      redirect('/');
+    }
+  }
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
   function updateCriminal()
   {
     $this->form_validation->set_rules($this->validationRules());
@@ -204,8 +217,17 @@ return $config;
 
   function countCommentNewCrime()
   {
+<<<<<<< HEAD
 $crime=$this->criminal_model->sql($this->criminal_model->countNewCrime());
 $comment=$this->criminal_model->sql($this->criminal_model->unreadComment());
+=======
+$crime=$this->criminal_model->sql("
+select count(crdoc_id) as crime_count from criminal_document
+where  crdoc_data->>'type'='crime' and crdoc_data->>'status'='0' ;");
+$comment=$this->criminal_model->sql("
+select count(crdoc_id) as comment_count from criminal_document
+where  crdoc_data->>'type'='comment' and crdoc_data->>'status'='0';");
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 $criminal_report=$this->criminal_model->sql($this->criminal_model->countFugitiveReport());
 $data['criminal_report']=$criminal_report[0]->report_count;
 $data['crime']=$crime[0]->crime_count;
@@ -213,6 +235,10 @@ $data['comment']=$comment[0]->comment_count;
 echo json_encode($data);
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 
 
   public function graph_data(){
@@ -222,6 +248,7 @@ echo json_encode($data);
     echo json_encode($data['no_crimes']);
 
   }
+<<<<<<< HEAD
   public function dashboardByAge(){
 
     $data['age']=$this->criminal_model->sql($this->criminal_model->dashboardByAge());
@@ -250,6 +277,18 @@ echo json_encode($data);
     echo json_encode($data['crime_categoty']);
   }
 
+=======
+
+  public function crime_category_report(){
+
+    $data['crime_categoty']=$this->criminal_model->get_crime_category();
+    
+    echo json_encode($data['crime_categoty']);
+  }
+
+=======
+>>>>>>> 985f3f7a903ca11b74eae8fd99c9d3d3fc9280b3
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 }
 
 ?>

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <div class="col-md-9" style="margin-top:-45px">
+=======
+<div class="col-md-9">
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 	<?php if($this->session->userdata('success')) {?>
 	<div class="col-md-12">
 	<div class="alert alert-info alert-dismissable">
@@ -53,11 +57,14 @@
 								<button class="btn btn-info btn-xs suspend_reactivate" title="suspend"
 								data-status="0" data-id="<?php echo $row->setting_id;?>">
 								<i class="fa fa-minus "> </i></button>
+<<<<<<< HEAD
 								<button class="btn btn-info btn-xs edit" title="Edit"
 								 data-id="<?php echo $row->setting_id;?>"
 								 data-city="<?php echo $row->setting_crime_name;?>"
 								 data-name="<?php echo $row->setting_crime_description?>">
 							 <i class="icon icon_pencil "> </i></button>
+=======
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 							</td>
 						</tr>
 					<?php } ?>
@@ -84,11 +91,14 @@
 								<button class="btn btn-info btn-xs suspend_reactivate" title="Reactivate"
 								data-status="1" data-id="<?php echo $row->setting_id;?>">
 								 <i class="icon icon_refresh "> </i></button>
+<<<<<<< HEAD
 								 <button class="btn btn-info btn-xs edit" title="Edit"
 								 data-id="<?php echo $row->setting_id;?>"
 								 data-city="<?php echo $row->setting_crime_name;?>"
 								 data-name="<?php echo $row->setting_crime_description?>">
 							 <i class="icon icon_pencil "> </i></button>
+=======
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 							</td>
 						</tr>
 					<?php } ?>
@@ -132,6 +142,7 @@
     </div>
   </div>
 </div>
+<<<<<<< HEAD
 <div class="modal fade" id="editCrimeCategory" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -169,6 +180,9 @@ $('.edit').click(function(){
 	$('#setting_crime_description').text($(this).data('name'));
 	$('#editCrimeCategory').modal('show');
 })
+=======
+<script>
+>>>>>>> 9e0b8bc0a59448ee068b493e71d9055cf9b2fd60
 $('.suspend_reactivate').click(function(){
 	var id=$(this).data('id');
 	var status=$(this).data('status');
