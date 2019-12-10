@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 <head>
+<style type="text/css">
+  .image-upload > input[type=file]  {
+   display: none;
+   corsur:pointer;
+}
 
+</style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="description" content="MrLaw - Insurance and Lawyer business template" />
     <meta name="keywords" content="building,business,construction,cleaning,transport,workshop" />
     <meta name="author" content="ThemeMascot" />
-
-    <title>Ethiopian Most Wanted Fugitives</title>
-    <link href="<?php echo site_url()?>assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <title>Ethiopian Most Wanted Criminal And Suspects</title>
+    <link href="<?php echo site_url()?>upload/logo/federal_logo.png" rel="shortcut icon" type="image/png">
     <link href="<?php echo site_url()?>assets/images/apple-touch-icon.png" rel="apple-touch-icon">
     <link href="<?php echo site_url()?>assets/images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
     <link href="<?php echo site_url()?>assets/images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
     <link href="<?php echo site_url()?>assets/images/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
 
     <link href="<?php echo site_url()?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo site_url()?>assets/css/Chart.min.css" rel="stylesheet" type="text/css">
     <link href="<?php echo site_url()?>assets/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
     <link href="<?php echo site_url()?>assets/css/animate.css" rel="stylesheet" type="text/css">
     <link href="<?php echo site_url()?>assets/css/css-plugin-collections.css" rel="stylesheet" />
@@ -30,6 +36,7 @@
     <link href="<?php echo site_url()?>assets/js/revolution-slider/css/settings.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo site_url()?>assets/js/revolution-slider/css/layers.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo site_url()?>assets/js/revolution-slider/css/navigation.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url()?>datepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 
     <script src="<?php echo site_url()?>assets/js/jquery-2.2.0.min.js"></script>
     <script src="<?php echo site_url()?>assets/js/jquery-ui.min.js"></script>
@@ -39,7 +46,7 @@
 
 </head>
 
-<body class="has-side-panel side-panel-right fullwidth-page side-push-panel">
+<body class="has-side-panel side-panel-right fullwidth-page side-push-panel" onload="graphData()">
     <header id="header" class="header">
         <div class="header-top main-color-bg sm-text-center">
             <div class="container-fluid">
@@ -47,43 +54,59 @@
                     <div class="col-md-3">
                         <div class="widget no-border m-0">
                             <ul class="social-icons icon-sm sm-text-center">
-                                <h5 style="color: #fff;">Ethio Most Wonted Control Room</h5>
+                                <h5 style="color: #fff; font-size: 13px;">
+                                  <?php echo ($this->session->userdata('lang')=='amh'?'የኢትዮጵያ ዋና ተፈላጊ ወንጀለኞችና ተጠርጣሪዎች':"Ethiopian Most Wanted Criminal And Suspects");?>
+                              </h5>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-9">
                         <div class="widget no-border m-0">
                             <ul class="list-inline pull-right sm-pull-none sm-text-center mt-5">
-                                <li class="dropdown" class="m-0 pl-10 pr-10">
-                                  <a class="dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button" data-hover="dropdown">
-                                    <span class="fa fa-bell"></span> New Crime Report <sup><sup><small><b class="badge" style="background-color: #d60808; color: #fff;">1</b></small></sup></sup>
+                                <li class="dropdown" class="m-0 pl-10 pr-10" data-rel="scroll" >
+                                  <a class="dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false" type="button" data-hover="dropdown">
+                                    <span class="fa fa-bell faa-ring animated"></span>
+                                    <?php echo ($this->session->userdata('lang')=='amh'?'ኤፍ አይ አር ረፖርት':"FIR Report");?>
+                                    <sup class="fir_count"></sup>
                                   </a>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-top: 10%;">
-                                    <div class="container content" style="max-width: 230px; color: #444;">
-                                        <div class="blog">
-                                            <div class="blog-pargraph">
-                                                <h6><i class="fa fa-user fa-sm"></i> <label style="color: #000;">Abebe</label></h6>
-                                                <h6><i class="fa fa-envelope fa-sm"></i> <label style="color: #000;"> mrx@gmail.com</label></h6>
-                                                <h6><i class="fa fa-phone fa-sm"></i> <label style="color: #000;">+251911111111</label></h6>
-                                                <label style="color: #000;">Message:</label><p> It is a long established fact that readable when looking at its layout...</p>
-                                            </div>
-                                            <button class="btn btn-border btn-block">View</button>
-                                            <hr>
-                                        <br>
-                                      </div>
+                                    <div style="overflow-y: scroll;height:318px" id="alert_text">
+
+
                                   </div>
+
+
                                 </li>
-                                <!-- <li class="m-0 pl-10 pr-10"><a href="#"> New Crime Report <sup><small class="badge" style="background-color: #d60808; color: #fff;">4</small></sup></a></li> -->
-                                <li class="m-0 pl-10 pr-10"> <a href="#"><img class="image" src="<?php echo base_url()?>assets/images/emw4.jpg" alt="featured project"  style="min-width: auto; min-height: auto; max-height: 30px!important; max-width: 30px; border-radius: 50%; margin-top: -5%;"></a></li>
+
+                                <li class="m-0 pl-10 pr-10">
+
+                                    <img class="image" src="<?php echo base_url().$this->session->userdata('image');?>"
+                                    alt="featured project"
+                                    style="min-width: auto; min-height: auto;
+                                    max-height:30px!important; max-width: 30px; border-radius: 50%; margin-top: -5%;">
+                                  </li>
+                                   <li class="one-big-icon mega-li">
+                                    <select onchange="javascript:window.location.href='<?php echo base_url(); ?>setting/languageChanging/'+this.value;" style="padding: 0px;background-color: #182c31;color:#cccccc;border-top-color:#182c31;border-bottom-color:#182c31;border-left-color:#182c31;border-right-color: #182c31;width: 70px">
+                                       <option value="amh"  <?php if ($this->session->userdata('lang') == 'amh') {
+                                        echo 'selected="selected"';
+                                        }
+                                        ?>>አማርኛ</option>
+                                        <option value="eng"  <?php if ($this->session->userdata('lang') == 'eng') {
+                                        echo 'selected="selected"';
+                                        }
+                                        ?>>English</option>
+                                      </select>
                                 </li>
-                                <?php
-				                  if( current_url()==base_url('/') )
-				                  {
-				                    echo "<a href='#' id='side-panel-trigger' class='side-panel-trigger'><i class='fa fa-bars fa-lg text-gray'></i></a>";
-				                  }else{
-				                    echo "<li><a href=".base_url()."><i class='fa fa-sign-out'></i> Logout</a></li>";
-				                  }
-				                ?>
+
+                                <li><a href="javascript:;" class="change_password"><i class='icon icon_key_alt'></i>
+                            <?php echo ($this->session->userdata('lang')=='amh'?'የይለፍ ቃል ቀይር':" Change Password");?>
+                                </a></li>
+                                <li><a href="<?php echo base_url('login');?>"><i class='fa fa-sign-out'></i>
+                                    <?php echo ($this->session->userdata('lang')=='amh'?'ከመግቢያ ሂሳብ ውጣ':"Logout");?>
+
+                                 </a></li>
+
                             </ul>
                         </div>
                     </div>
@@ -91,35 +114,77 @@
             </div>
         </div>
     </header>
-    <div class="container-fluid" id="admin_css" style="min-height: 750px;">
+    <div class="container-fluid" id="admin_css" style="min-height: 1000px;">
 
         <div class="row" style="padding-top: 3%;">
             <div class="col-md-3" id="left_nav">
-              <div class="panel panel-default">
+              <div class="panel panel-default" style="height: 106vh;">
                 <div class="panel-heading main-color-bg" style="background-color: #182c31; color: #fff;">
-                    <?php
-                        if (current_url()==base_url('admin')) {
-                            echo "<h3 class='panel-title' align='left'><span class='fa fa-home'></span> Dashbord</h3>";
-                        } elseif (current_url()==base_url('all-wanted')) {
-                            echo "<h3 class='panel-title' align='left'><span class='fa fa-list'></span> All Wanted List</h3>";
-                        } elseif (current_url()==base_url('all-reported')){
-                             echo "<h3 class='panel-title' align='left'><span class='fa fa-edit'></span> All Reports</h3>";
-                        }elseif(current_url()==base_url('settings')){
-                             echo "<h3 class='panel-title' align='left'><span class='fa fa-cogs'></span> Settings</h3>";
-                        }else{
-                            echo "<h3 class='panel-title' align='left'><a href=".base_url('admin')."><span class='fa fa-arrow-left'></span> Back to dashboard</a></h3>";
-                        }
-                    ?>                    
+
+                      <h3 class='panel-title' align='left'><a href="<?php echo base_url('/admin');?>">
+                          <span class='fa fa-list'></span> <?php echo ($this->session->userdata('lang')=='amh'?'ማውጫ':"Menu");?>
+</a></h3>
+
                 </div>
                 <div class="panel-body">
                   <div class="list-group">
-                    <a href="<?php echo base_url()?>admin" class="<?=(current_url()==base_url('admin')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-home"></span> Main Dashbord</a>
-                    <a href="<?php echo base_url()?>all-wanted" class="<?=(current_url()==base_url('all-wanted')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-list"></span> All Wanted List</a>
-                    <a href="<?php echo base_url()?>all-reported" class="<?=(current_url()==base_url('all-reported')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-edit"></span> All Fugitives Reports</a>
-                    <a href="<?php echo base_url()?>all-crime-report" class="<?=(current_url()==base_url('all-crime-report')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-bell"></span> New Crime Reports <span class="badge main-color-bg">1</span></a>
+                    <a href="<?php echo base_url()?>admin" class="<?=(current_url()==base_url('admin')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-home"></span> 
+                      <?php echo ($this->session->userdata('lang')=='amh'?'መነሻ ገጽ':"Dashboard");?></a>
+                    <a href="<?php echo base_url()?>all-wanted?page=1&which=both" class="<?=(current_url()==base_url('all-wanted')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-user"></span> 
+                   
+                      <?php echo ($this->session->userdata('lang')=='amh'?'ወንጀለኞችና ተጠርጣሪዎች':"Criminal And Suspects");?>
+                  </a>
+                    <a href="<?php echo base_url()?>all-reported?page=1" class="<?=(current_url()==base_url('all-reported')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-edit"></span>
+                     
+                                            <?php echo ($this->session->userdata('lang')=='amh'?'ወንጀለኞችና ተጠርጣሪዎች ቦታ ጦቆም':"Criminal And Suspects Report");?>
+                      <span id="criminal_count_report"></span></a>
+                    <a href="<?php echo base_url()?>all-crime-report?ofset=1"
+                      class="<?=(current_url()==base_url('all-crime-report')) ? 'list-group-item active':'list-group-item'?>">
+                      <span class="fa fa-bell faa-ring"></span>
+                        <?php echo ($this->session->userdata('lang')=='amh'?'ኤፍ አይ አር ረፖርት':"FIR Report");?>
+                      
+                      <span class="crime_report_count"></span></a>
                     <!-- <a href="#" class="list-group-item"><span class="fa fa-life-ring"></span> Support Request<span class="badge main-color-bg">10</span></a> -->
-                    <a href="<?php echo base_url()?>comment"  class="<?=(current_url()==base_url('comment')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-envelope"></span> Message <span class="badge main-color-bg">4</span></a>
-                    <a href="<?php base_url()?>settings" class="<?=(current_url()==base_url('settings')) ? 'list-group-item active':'list-group-item'?>"><span class="fa fa-cogs"></span> Settings</a>
+                    <a href="<?php echo base_url()?>comment?ofset=1"
+                       class="<?=(current_url()==base_url('comment')) ? 'list-group-item active':'list-group-item'?>">
+                      <span class="fa fa-envelope faa-shake "></span> 
+                                            <?php echo ($this->session->userdata('lang')=='amh'?'አስተያየት':"Comment");?>
+
+                      
+                      <span  id="comment_count"></span></a>
+                    <a href="<?php echo base_url('account_user')?>"
+                      class="<?=(current_url()==base_url('account_user')) ? 'list-group-item active':'list-group-item'?>">
+                      <span class="fa fa-users"></span>
+                                            <?php echo ($this->session->userdata('lang')=='amh'?'የተጠቃሚዎች መግቢያ':"User Account");?>
+                       
+                    </a>
+                    <div class=" dropdown">
+                      <a href="#" class="<?=(
+                                              current_url()==base_url('page-settings')
+                                            ) ||  current_url()==base_url('city-settings')
+                                            ?
+                                            'list-group-item dropdown-toggle active'
+                                            : 'list-group-item dropdown-toggle'
+                                          ?>"
+                                            id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="fa fa-cogs"></span> 
+                                                                    <?php echo ($this->session->userdata('lang')=='amh'?'መቼት':"Settings");?>
+
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 100%;">
+                        <a  class="<?=(current_url()==base_url('city-settings')) ? 'list-group-item dropdown-item active':'list-group-item dropdown-item'?>" href="<?php echo site_url('city-settings')?>">
+                       
+                                                                                              <?php echo ($this->session->userdata('lang')=='amh'?'ቦታ':"Locations");?>
+                        </a>
+                        <a class="<?=(current_url()==base_url('page-settings')) ? 'list-group-item dropdown-item active':'list-group-item dropdown-item'?>" href="<?php echo site_url('page-settings')?>">
+                                                                    <?php echo ($this->session->userdata('lang')=='amh'?'የወንጀል አይነቶች':"Crime Category");?>
+
+                        </a>
+                      </div>
+
+                    </div>
+
+
                   </div>
                 </div>
               </div>
